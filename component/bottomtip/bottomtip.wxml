@@ -1,0 +1,2 @@
+<!--component/bottomtip/bottomtip.wxml-->
+<view class='tiptext'>{{tiptext}}</view>

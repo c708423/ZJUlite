@@ -3,29 +3,14 @@
   width:100%;
   margin-left:3rpx;
   height:182rpx;
+  display:flex;
   background-color:#FFFFFF;
   margin-bottom:2rpx;
   flex-direction:row;
-  position:relative;
-}
-.msgbox-del{
-  position:absolute;
-  background-color:red;
-  width:150rpx;
-  right:-150rpx;
-  top:0rpx;
-  height:100%;
-  display:flex;
-  align-items: center;
 }
 .msgcontent{
-  padding-top:38rpx;
-  width:195rpx;
-}
-.msgbox-main{
-  height:100%;
-  width:100%;
-  display:flex;
+  padding-top:20rpx;
+  width:70%;
 }
 .msg-title{
   font-size:36rpx;
@@ -49,6 +34,12 @@
 .msg-brief{
   font-size:26rpx;
   color:#A9A9A9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
 }
 .red-point{
   width:36rpx;
@@ -63,9 +54,4 @@
   font-size: 25rpx;
   top:-10rpx;
   right:-10rpx;
-}
-.del-word{
-  display:block;
-  margin:0 auto;
-  color:white;
 }
