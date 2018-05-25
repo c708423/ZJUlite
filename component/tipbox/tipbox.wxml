@@ -1,0 +1,6 @@
+<!--component/tipbox/tipbox.wxml-->
+<view>
+<view class='tipbox' style="display:{{newsNum ? '':'none'}}" >
+</view>
+  <view class='newstip' bindtap='tapEvent' style="display:{{newsNum ? '':'none'}}">{{newsNum}}条新消息</view> 
+</view>

@@ -1,0 +1,48 @@
+/* component/searchpicker/searchpicker.wxss */
+.mainbox{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.title{
+  text-align: center;
+  color: #1F3DB2;
+  font-size: 24rpx;
+}
+.inlinebox{
+  margin-top: 10rpx;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.timelastbox{
+  text-align: center;
+  background-color: #DCDCDC;
+  width: 150rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 20rpx;
+}
+.timepickerbox{
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx; 
+}
+
+.memo{
+  font-size: 22rpx;
+  text-align: center;
+  color: #888888;
+}
+.memopick{
+  color: #2C56FF !important;
+}
+picker-view{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
