@@ -4,7 +4,6 @@
     padding-bottom:0rpx;
     padding-left:25.93rpx;
     padding-right:25.93rpx;
-    padding-bottom:45rpx;
 }
 .container{
     padding-top:0rpx;
@@ -13,11 +12,8 @@
 .content-container{
     margin-bottom:100rpx;
 }
-#talk{
-  overflow-x: hidden;
-}
 .backgroundcolor{
-    background: linear-gradient(180deg, #22f4b1 , #0eb9e7);
+    background: #29A2E9;
     height:280rpx;
     position: absolute;
     top:0rpx;
@@ -49,6 +45,7 @@
   height:32rpx;
 }
 .send-msg{
+  z-index: 100;
   position:fixed;
   right:34rpx;
   bottom:255rpx;
@@ -67,13 +64,20 @@ image{
   display:none;
 }
 .white-point{
-  width:50rpx;
-  height:50rpx;
+  /* display: flex;
+  justify-content:center;
+  align-items:center; */
+  width:80rpx;
+  height:80rpx;
   border-radius: 50%;
+  background-color: #fff;
   box-shadow:0rpx 9rpx 35rpx 1rpx rgba(0,0,1,0.35);
-  margin:20rpx auto;
-  
+  margin: 20rpx auto;
+  text-align: center;
 }
-#loadmore {
-  position:relative;
+.white-point image{
+  position: relative;
+  top: 10rpx;
+  width: 70%;
+  height: 70%;
 }

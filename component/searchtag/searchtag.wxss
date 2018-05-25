@@ -1,4 +1,12 @@
 /* component/searchtag/searchtag.wxss */
+.searchwrapper{
+  position: relative;
+}
+.searchicon{
+  position: absolute;
+  z-index:5;
+  top:38rpx;
+}
 .searchbox{
     background-color: #FFFFFF;
     width:450rpx;

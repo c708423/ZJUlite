@@ -26,7 +26,6 @@ Component({
             selecttype : newarr
           })
           console.log(this.data.selecttype);
-          this.triggerEvent("classifychagne",{'id':e.currentTarget.id},{});
       }
   }
 })

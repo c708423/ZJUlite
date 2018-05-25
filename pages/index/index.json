@@ -5,11 +5,17 @@
     "contentcard": "../../component/contentcard/contentcard",
     "classified":"../../component/classified/classified",
     "userprofile":"../../component/userprofile/userprofile",
-    "msgbox":"../../component/msgbox/msgbox"
-  }, 
+    "msgbox":"../../component/msgbox/msgbox",
+    "bottomtip": "../../component/bottomtip/bottomtip",
+    "searchpicker": "../../component/searchpicker/searchpicker",
+    "tipbox":"../../component/tipbox/tipbox"
+  },
   "enablePullDownRefresh": true,
-  "backgroundColorTop": "#22f4b1",
+  "backgroundColorTop": "#29A2E9",
   "backgroundColorBottom": "#FCFAFA",
-  "navigationBarBackgroundColor":"#22f4b1",
+  "backgroundTextStyle": "dark",
+  "navigationStyle":"custom",
+  "navigationBarBackgroundColor":"#29A2E9",
+  "onReachBottomDistance":-50,
   "navigationBarTitleText":"新鲜事"
 }
