@@ -1,0 +1,10 @@
+<!--component/contentcard/contentcard.wxml-->
+<view class='cardstyle redtip' bind:transparencyRefresh="transparencyRefresh">
+   <view class='card-title'>
+      <span>失物招领</span>
+   </view>
+   <view class = 'card-content'>
+      <p>asdfasdjkfhjweuasd<br/>
+      sdsdsd</p>
+   </view>
+</view>

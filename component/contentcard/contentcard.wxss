@@ -1,0 +1,26 @@
+/* component/contentcard/contentcard.wxss */
+.cardstyle{
+  background-color: #FFFFFF;
+  height:202rpx;
+  left:0rpx;
+  right:0rpx;
+  position:relative;
+  border-radius: 8rpx;
+  margin-top:10rpx;
+  font-family: PingFangSC-Light, sans-serif;
+  margin-bottom:5rpx;
+  box-shadow: 0rpx 0rpx 1rpx 1rpx rgba(0,0,1,0.09);
+  padding-top:24rpx;
+  padding-left:40rpx;
+}
+.cardstyle .card-title {
+  font-size : 32rpx;
+  margin-bottom:14rpx;
+}
+.cardstyle .card-content{
+  font-size : 24rpx;
+  color:#353535;
+}
+.redtip{
+  border-left:11rpx solid #FD5F30;
+}

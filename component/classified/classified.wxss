@@ -1,0 +1,37 @@
+/* component/classified/classified.wxss */
+.classification-style{
+    background-color: #FFFFFF;
+    height:340rpx;
+    display: flex;
+    border-radius: 13rpx;
+    margin-top:50rpx;
+    padding-top:30rpx;
+    padding-left:30rpx;
+    padding-right:30rpx; 
+    flex-flow:wrap row;
+    justify-content:center;
+    box-shadow: 0rpx 0rpx 3rpx 2rpx rgba(6,225,1,0.09);
+}
+.select-item span{
+    color:#0F47BB;
+}
+.class-item{
+    width:25%;
+    height:135rpx;
+    font-size:23rpx;
+    color:#888888;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+}
+.class-item span {
+  margin-top: 14rpx;
+  display:block;
+}
+.class-item image {
+    margin:0 auto;
+    display:block;
+    width:90rpx;
+    height:90rpx;
+}

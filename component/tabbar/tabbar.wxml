@@ -1,0 +1,15 @@
+<!--component/tabbar/tabbar.wxml-->
+<view class='wrap_bar'>
+  <view id='home' class = 'bar-button' bindtap = "select_bar">
+    <image src = "/asset/icon/home.png"></image>
+  </view>
+  <view id='new-msg' class = 'bar-button' bindtap = "select_bar">
+    <image src = "/asset/icon/talk.png"></image>
+  </view>
+  <view id='talk' class = 'bar-button' bindtap = "select_bar">
+    <image src = "{{blue_one['talk'] == 1 ? '/asset/icon/blue-talk.png':'/asset/icon/talk.png'}}"></image>
+  </view>
+  <view id='user' class = 'bar-button' bindtap = "select_bar">
+    <image src = "/asset/icon/user-center.png"></image>
+  </view>
+</view>

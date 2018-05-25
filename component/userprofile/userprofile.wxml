@@ -1,0 +1,10 @@
+<!--component/userprofile/userprofile.wxml-->
+<view class='userprofile-class'>
+  <view class='user-head'>
+    <view class='headimg-wrap'>
+      <image src = src="/asset/icon/1.jpg">
+      </image>
+    </view>
+  </view>
+  <title class='user-name'> name </title>
+</view>

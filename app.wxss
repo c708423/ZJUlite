@@ -1,0 +1,13 @@
+/**app.wxss**/
+@import 'asset/style/weui.wxss';
+page{
+  background-color: #FCFAFA;
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 200rpx 0;
+} 

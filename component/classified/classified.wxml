@@ -1,0 +1,35 @@
+<!--component/classified/classified.wxml-->
+<view class='classification-style'>
+  <view bindtap='change_type' class="class-item {{selecttype[0] ? 'select-item' : ''}}" id='classy0'>
+    <image src="/asset/icon/Eyeglass.png"></image>
+    <span>学业疑难</span>
+  </view>
+  <view bindtap='change_type' class="class-item {{selecttype[1] ? 'select-item' : ''}}" id='classy1'>
+    <image src="/asset/icon/Hat.png"></image>
+    <span>仙女集市</span>
+  </view>
+  <view bindtap='change_type' class="class-item {{selecttype[2] ? 'select-item' : ''}}" id='classy2'>
+    <image src="/asset/icon/Bag-Present.png"></image>
+    <span>箱包服饰</span>
+  </view>
+  <view bindtap='change_type' class="class-item {{selecttype[3] ? 'select-item' : ''}}" id='classy3'>
+    <image src="/asset/icon/Checklist.png"></image>
+    <span>失物招领</span>
+  </view>
+  <view bindtap='change_type' class="class-item {{selecttype[4] ? 'select-item' : ''}}" id='classy4'>
+    <image src="/asset/icon/Paper-Plane.png"></image>
+    <span>出国保研</span>
+  </view>
+  <view bindtap='change_type' class="class-item {{selecttype[5] ? 'select-item' : ''}}" id='classy5'>
+    <image src="/asset/icon/Beach.png"></image>
+    <span>出行玩乐</span>
+  </view>
+  <view bindtap='change_type' class="class-item {{selecttype[6] ? 'select-item' : ''}}" id='classy6'>
+    <image src="/asset/icon/Love-Letter.png"></image>
+    <span>寻人征友</span>
+  </view>
+  <view bindtap='change_type' class="class-item {{selecttype[7] ? 'select-item' : ''}}" id='classy7'>
+    <image src="/asset/icon/Chat-2.png"></image>
+    <span>畅所欲言</span>
+  </view>
+</view>

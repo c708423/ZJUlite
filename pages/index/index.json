@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "tabbar": "../../component/tabbar/tabbar",
+    "searchtag": "../../component/searchtag/searchtag",
+    "contentcard": "../../component/contentcard/contentcard",
+    "classified":"../../component/classified/classified",
+    "userprofile":"../../component/userprofile/userprofile",
+    "msgbox":"../../component/msgbox/msgbox"
+  }, 
+  "enablePullDownRefresh": true,
+  "backgroundColorTop": "#22f4b1",
+  "backgroundColorBottom": "#FCFAFA",
+  "navigationBarBackgroundColor":"#22f4b1",
+  "navigationBarTitleText":"新鲜事"
+}

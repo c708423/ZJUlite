@@ -1,0 +1,28 @@
+/* component/userprofile/userprofile.wxss */
+.userprofile-class {
+  width:100%;
+  height:182rpx;
+  display:flex;
+  margin-bottom: 9rpx;
+  background-color:white;
+}
+.user-head {
+  height:182rpx;
+  width:182rpx;
+  margin-right:10rpx;
+  display:flex;
+  align-items: center;
+}
+.headimg-wrap{
+  height:120rpx;
+  width:120rpx;
+  border-radius: 50%;
+  background-color:#DFDFDF;
+  margin:0 auto;
+  overflow:hidden;
+}
+.user-name {
+  font-size:34rpx;
+  color:#000000;
+  padding-top:38rpx;
+}

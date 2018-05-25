@@ -1,0 +1,17 @@
+/* component/searchtag/searchtag.wxss */
+.searchbox{
+    background-color: #FFFFFF;
+    width:450rpx;
+    height:50rpx;
+    position:relative;
+    top:25rpx;
+    left:40rpx;
+    border-radius: 76rpx;
+    padding-left:90rpx;
+    padding-right:90rpx;
+    text-align: center;
+    font-size:23rpx;
+}
+.placehoder-text{
+  text-align: center;
+}
