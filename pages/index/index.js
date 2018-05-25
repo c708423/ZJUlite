@@ -20,10 +20,24 @@ Page({
       'talk':0,
       'new-msg':0
     },
-    sendmsg_state:0
+    sendmsg_state:0,
+    pullstatus:1,
+    searchstatus:0
   },
   cancelWhitepoint:function(e){
     if (this.data.sendmsg_state == 1) this.setData({sendmsg_state:0});
+  },
+  redirectToNews:function(){
+      var stateHome = {
+        'home': 0,
+        'user': 0,
+        'talk': 1,
+        'new-msg': 0
+      }
+      this.setData({
+        showView: stateHome
+      });
+      console.log(this.data.showView);
   },
   fresh_homepage: function(e){
     var stateHome = {
@@ -74,6 +88,20 @@ Page({
         that.setData({ contentcard: that.data.contentcard });
       }, 1000);
   },
+  onPullDownRefresh: function () {
+      var that=this
+      console.log("onReachTop");
+      this.setData({
+        pullstatus:0
+      })
+      //以下做数据处理
+      setTimeout(function(){
+        wx.stopPullDownRefresh()
+        that.setData({
+          pullstatus: 1
+        })
+      },3000)
+  },
   allgoback: function(){
     var that = this;
     console.log('all go back happen');
@@ -89,6 +117,22 @@ Page({
   pushnewitem:function(){
     wx.navigateTo({
       url: '../postinfo/postinfo?id=classy1'
+    })
+  },
+  searchStatusChange: function(){
+    var that = this
+    var nowstatus = this.data.searchstatus
+    nowstatus = 1 - nowstatus
+    this.setData({
+      searchstatus: nowstatus
+    })
+  },
+  searchStatusChange: function(){
+    var that = this
+    var nowstatus = this.data.searchstatus
+    nowstatus = 1 - nowstatus
+    this.setData({
+      searchstatus: nowstatus
     })
   }
 })

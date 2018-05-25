@@ -49,6 +49,12 @@
 .msg-brief{
   font-size:26rpx;
   color:#A9A9A9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
 }
 .red-point{
   width:36rpx;

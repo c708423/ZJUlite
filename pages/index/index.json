@@ -5,8 +5,11 @@
     "contentcard": "../../component/contentcard/contentcard",
     "classified":"../../component/classified/classified",
     "userprofile":"../../component/userprofile/userprofile",
-    "msgbox":"../../component/msgbox/msgbox"
-  }, 
+    "msgbox":"../../component/msgbox/msgbox",
+    "bottomtip": "../../component/bottomtip/bottomtip",
+    "searchpicker": "../../component/searchpicker/searchpicker",
+    "tipbox":"../../component/tipbox/tipbox"
+  },
   "enablePullDownRefresh": true,
   "backgroundColorTop": "#22f4b1",
   "backgroundColorBottom": "#FCFAFA",

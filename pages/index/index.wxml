@@ -2,8 +2,14 @@
 <view class="{{showView['home']?'home-container':'container'}}">
   <view bindtap='cancelWhitepoint' id='home' class="{{showView['home'] ? '':'viewhidden'}}">
     <view class='backgroundcolor'></view>
-    <searchtag></searchtag>
+    <searchtag bind:searchStatusChange="searchStatusChange"></searchtag>
+    <view class="{{pullstatus && !searchstatus? '':'viewhidden'}}">
+      <tipbox bind:checknews="redirectToNews"></tipbox>
+    </view>
     <classified></classified>
+    <view class="{{pullstatus && searchstatus? '':'viewhidden'}}">
+      <searchpicker></searchpicker>
+    </view>
     <view class='mid-tip-msg'>
       <p>
         最新消息
@@ -17,13 +23,16 @@
       <view class="weui-loadmore__tips">正在加载</view>
     </view>
     <view class='send-msg'>
-      <view catchtap='pushnewinfo' class='white-point {{sendmsg_state == 0?"hidden":""}}'> 1 </view>
-      <view catchtap='pushnewitem' class='white-point {{sendmsg_state == 0?"hidden":""}}'> 2 </view>
+      <view catchtap='pushnewinfo' class='white-point {{sendmsg_state == 0?"hidden":""}}'><image src="/asset/icon/free.png"></image></view>
+      <view catchtap='pushnewitem' class='white-point {{sendmsg_state == 0?"hidden":""}}'><image src="/asset/icon/info.png"></image></view>
       <image id='pushinfo' src="/asset/icon/sendmsg.png" catchtap='send_msg'></image>
     </view>
   </view>
   <view id='talk' class="{{showView['talk'] ? '':'viewhidden'}}" catch:touchstart='allgoback'>
     <msgbox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox"></msgbox>
+    <view class="{{pullstatus ? '':'viewhidden'}}">
+      <bottomtip></bottomtip>
+    </view>
   </view>
   <view id='msg' class="{{showView['new-msg'] ? '':'viewhidden'}}">
   </view>

@@ -1,5 +1,6 @@
 <!--component/searchtag/searchtag.wxml-->
-<view>
-<input class = 'searchbox' placeholder='搜索' placeholder-class='placeholder-text'>
+<view class='searchwrapper'>
+<icon type="search" size="12" class='searchicon' style='left:{{iconleft}}rpx'></icon>
+<input class = 'searchbox' placeholder='搜索' placeholder-class='placeholder-text' bindtap='tapevent' bindblur='tapleave'>
 </input>
 </view>
