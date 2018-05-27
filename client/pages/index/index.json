@@ -13,6 +13,9 @@
   "enablePullDownRefresh": true,
   "backgroundColorTop": "#22f4b1",
   "backgroundColorBottom": "#FCFAFA",
+  "backgroundColor":"#22f4b1",
   "navigationBarBackgroundColor":"#22f4b1",
-  "navigationBarTitleText":"新鲜事"
+  "navigationBarTitleText":"新鲜事",
+  "backgroundTextStyle":"dark",
+  "onReachBottomDistance":0
 }

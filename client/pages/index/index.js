@@ -4,7 +4,7 @@ Page({
   data: {
     contentcard:['1','2','3','4','5','6','7','8'],
     talkcard:[
-      { id: 'msgbox1', title: 'Qc0', content: 'sili23il'},
+      { id: 'msgbox1', title: 'Qc0', content: 'sili23i收到收到机收到收到机收到收到机收到收到机收到收到机卡士力架老师看大家阿斯顿快乐机啊3李丹空间l'},
       { id: 'msgbox2', title: 'Qc1', content: 'si32il'},
       { id: 'msgbox3', title: 'Qc2', content: 'sil43sil'},
       { id: 'msgbox5', title: 'Qc3', content: 'si4234fdssdsil'}

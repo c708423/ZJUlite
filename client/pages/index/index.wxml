@@ -2,7 +2,9 @@
 <view class="{{showView['home']?'home-container':'container'}}">
   <view bindtap='cancelWhitepoint' id='home' class="{{showView['home'] ? '':'viewhidden'}}">
     <view class='backgroundcolor'></view>
+    <view class='searchtag'>
     <searchtag bind:searchStatusChange="searchStatusChange"></searchtag>
+    </view>
     <view class="{{pullstatus && !searchstatus? '':'viewhidden'}}">
       <tipbox bind:checknews="redirectToNews"></tipbox>
     </view>

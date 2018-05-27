@@ -5,6 +5,7 @@
     padding-left:25.93rpx;
     padding-right:25.93rpx;
     padding-bottom:45rpx;
+    overflow-x:hidden;
 }
 .container{
     padding-top:0rpx;
@@ -19,11 +20,11 @@
 .backgroundcolor{
     background: linear-gradient(180deg, #22f4b1 , #0eb9e7);
     height:280rpx;
-    position: absolute;
+    position: fixed;
     top:0rpx;
     left:0rpx;
     right:0rpx;
-    z-index:-1;
+    z-index:-999;
 }
 .usertip{
   color:#888888;

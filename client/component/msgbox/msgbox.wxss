@@ -19,8 +19,9 @@
   align-items: center;
 }
 .msgcontent{
-  padding-top:38rpx;
+  padding-top:21rpx;
   width:195rpx;
+  width:70%;
 }
 .msgbox-main{
   height:100%;
