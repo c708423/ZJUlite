@@ -32,6 +32,8 @@
   </view>
   <view id='talk' class="{{showView['talk'] ? '':'viewhidden'}}" catch:touchstart='allgoback'>
     <msgbox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox"></msgbox>
+
+
     <view class="{{pullstatus ? '':'viewhidden'}}">
       <bottomtip></bottomtip>
     </view>
@@ -39,8 +41,9 @@
   <view id='msg' class="{{showView['new-msg'] ? '':'viewhidden'}}">
   </view>
   <view id='user' class="{{showView['user'] ? '':'viewhidden'}}">
-    <userprofile></userprofile>
+    <userprofile name='{{userInfo.nickName}}' avaurl='{{userInfo.avatarUrl}}'><button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击测试登录接口</button></userprofile>
     <label class='usertip'>与我相关</label>
+
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_access">
         <view class="weui-cell__bd">

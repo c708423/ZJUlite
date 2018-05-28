@@ -2,9 +2,10 @@
 <view class='userprofile-class'>
   <view class='user-head'>
     <view class='headimg-wrap'>
-      <image src = src="/asset/icon/1.jpg">
+      <image src = src="{{avaurl}}">
       </image>
     </view>
   </view>
-  <title class='user-name'> name </title>
+  <title class='user-name'> {{name}} </title>
+  <slot></slot>
 </view>

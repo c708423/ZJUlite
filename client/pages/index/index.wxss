@@ -11,6 +11,9 @@
     padding-top:0rpx;
     padding-bottom:0rpx;
 }
+#user{
+  overflow-x: hidden;
+}
 .content-container{
     margin-bottom:100rpx;
 }

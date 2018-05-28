@@ -18,7 +18,7 @@ Page({
     ],
     haveposition:[
       { name: '紫荆港', value:'0', checked:true},
-      { name: '玉泉', value:'1' , checked:false},
+      { name: '玉泉', value: '1' , checked:false},
       { name: '西溪', value: '2', checked: false },
       { name: '之江', value: '3', checked: false }
     ]
@@ -29,7 +29,7 @@ Page({
   chooseImage: function (e) {
     var that = this;
     wx.chooseImage({
-      count:1,
+      count:2-this.data.files.length,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
@@ -39,6 +39,7 @@ Page({
         });
       }
     })
+    
   },
   previewImage: function (e) {
     wx.previewImage({

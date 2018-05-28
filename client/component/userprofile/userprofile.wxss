@@ -5,6 +5,15 @@
   display:flex;
   margin-bottom: 9rpx;
   background-color:white;
+  position:relative;
+
+}
+.userprofile-class button {
+position:absolute;
+width:750rpx;
+height:100%;
+opacity:0;
+
 }
 .user-head {
   height:182rpx;

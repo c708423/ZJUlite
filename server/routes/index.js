@@ -14,11 +14,10 @@ const { auth: { authorizationMiddleware, validationMiddleware } } = require('../
 // 登录接口
 router.get('/login', authorizationMiddleware, controllers.login)
 // 用户信息接口（可以用来验证登录态）
-router.get('/hello', async ctx => {
-  ctx.state.data = "Hello World !"
-})
 router.get('/user', validationMiddleware, controllers.user)
 
+// 信息上传接口
+router.post('/infopost', validationMiddleware, controllers.infopost)
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)
