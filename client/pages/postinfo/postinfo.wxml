@@ -9,23 +9,28 @@
           <label>{{classify_map[nowclass]}}</label>
         </view>
         <view class='inputbox'>
-          <textarea placeholder='输入文字...'></textarea>
+          <textarea placeholder='输入文字...' bindconfirm='content_complete' bindblur='content_complete'></textarea>
         </view>
       </view>
       <view class='uploader-container'>
         <view class="weui-uploader__bd">
           <view class="weui-uploader__files" id="uploaderFiles">
             <block wx:for="{{files}}" wx:key="*this">
-              <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
-                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
-              </view>
+              <block wx:if="{{item.state == 2}}">
+                <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if="{{item.state == 1}}">
+                <view class="weui-uploader__file weui-uploader__file_status">
+                  <image class="weui-uploader__img" src="" mode="aspectFill" />
+                  <view class="weui-uploader__file-content">{{item.progress}}%</view>
+                </view>
+              </block>
             </block>
-            <view class="weui-uploader__file weui-uploader__file_status">
-              <image class="weui-uploader__img" src="" mode="aspectFill" />
-              <view class="weui-uploader__file-content">50%</view>
-            </view>
+
           </view>
-          <view class="weui-uploader__input-box {{files.length<2?'':'viewhidden'}}">
+          <view class="weui-uploader__input-box {{files.length<1?'':'viewhidden'}}">
             <view class="weui-uploader__input" bindtap="chooseImage"></view>
           </view>
         </view>
@@ -71,7 +76,7 @@
         </view>
       </view>
     </view>
-<button bindtap="setDisabled" id='submit' bindtap='submitinfo'>发布消息</button>
+    <button bindtap="setDisabled" id='submit' bindtap='submitinfo'>发布消息</button>
 
   </view>
 </view>

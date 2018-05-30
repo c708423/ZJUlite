@@ -69,14 +69,16 @@ image{
   bottom:-153rpx;
 }
 .hidden{
-  display:none;
+  display:none !important;
 }
 .white-point{
   /* display: flex;
   justify-content:center;
   align-items:center; */
-  width:80rpx;
-  height:80rpx;
+  width:60rpx;
+  height:60rpx;
+  display:flex;
+  align-items: center;
   border-radius: 50%;
   background-color: #fff;
   box-shadow:0rpx 9rpx 35rpx 1rpx rgba(0,0,1,0.35);
@@ -85,7 +87,7 @@ image{
 }
 .white-point image{
   position: relative;
-  top: 10rpx;
+  margin:0 auto;
   width: 70%;
   height: 70%;
 }

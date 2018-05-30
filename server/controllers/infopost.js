@@ -4,16 +4,16 @@ module.exports = async (ctx, next) => {
     // 登录信息会被存储到 ctx.state.$wxInfo
     if (ctx.state.$wxInfo.loginState === 1) {
         // loginState 为 1，登录态校验成功
-        const userinfo = ctx.state.$wxInfo.userinfo
+        console.log('infopost', ctx)
         const infodata = {
             classify: ctx.request.body.classify,
             content: ctx.request.body.content,
+            haveimg: ctx.request.body.haveimg,
             imgurl: ctx.request.body.img,
-            position: ctx.request.body.position,
-            oldprice: ctx.request.body.oldprice,
-            newprice: ctx.request.body.newprice
+            localvisible: ctx.request.body.localvisible,
+            position: ctx.request.body.position
         }
-
+        ctx.state.data['infodata'] = infodata
     } else {
         ctx.state.code = -1
     }

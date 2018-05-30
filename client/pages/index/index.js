@@ -187,6 +187,7 @@ Page({
           encryptedData: options.encryptedData,
           iv: options.iv,
         }
+        console.log(loginResult);
         qcloud.requestLogin({
           loginParams, success() {
             util.showSuccess('登录成功');

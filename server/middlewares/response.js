@@ -27,5 +27,6 @@ module.exports = async function (ctx, next) {
             code: -1,
             error: e && e.message ? e.message : e.toString()
         }
+        console.log(ctx)
     }
 }

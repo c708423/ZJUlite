@@ -101,7 +101,6 @@ var login = function login(options) {
             data: options.data,
             success: function (result) {
                 var data = result.data;
-
                 // 成功地响应会话信息
                 if (data && data.code === 0 && data.data.skey) {
                     var res = data.data
@@ -179,7 +178,6 @@ var requestLogin = function requestLogin(options) {
   header[constants.WX_HEADER_CODE] = code;
   header[constants.WX_HEADER_ENCRYPTED_DATA] = encryptedData;
   header[constants.WX_HEADER_IV] = iv;
-
   // 请求服务器登录地址，获得会话信息
   wx.request({
     url: options.loginUrl,
