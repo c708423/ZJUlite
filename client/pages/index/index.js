@@ -155,6 +155,7 @@ Page({
             success: function () {
               // 登录态未过期
               util.showSuccess('登陆成功');
+              console.log('登陆态未过期');
               that.setData({
                 userInfo: userInfo,
                 logged: true
@@ -164,6 +165,7 @@ Page({
             fail: function () {
               qcloud.clearSession();
               // 登录态已过期，需重新登录
+              console.log('登陆态已过期');
               var options = {
                 encryptedData: e.detail.encryptedData,
                 iv: e.detail.iv,

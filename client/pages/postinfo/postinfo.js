@@ -138,6 +138,7 @@ Page({
     }
     qcloud.request({
       url: config.service.hosturl + 'infopost',
+      method:"post",
       data:{
         classify:that.data.classify_map[that.data.nowclass],
         content:that.data.content,

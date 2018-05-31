@@ -82,7 +82,6 @@ function request(options) {
 
                 var error, message;
                 if (data && data.code === -1) {
-                    Session.clear();
                     // 如果是登录态无效，并且还没重试过，会尝试登录后刷新凭据重新请求
                     if (!hasRetried) {
                         hasRetried = true;

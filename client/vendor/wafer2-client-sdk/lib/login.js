@@ -187,6 +187,7 @@ var requestLogin = function requestLogin(options) {
     success: function (result) {
       var data = result.data;
       // 成功地响应会话信息
+      console.log('requestlogin',result);
       if (data && data.code === 0 && data.data.skey) {
         var res = data.data
 
