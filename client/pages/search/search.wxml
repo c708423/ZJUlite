@@ -1,0 +1,15 @@
+<!--pages/search/search.wxml-->
+<view class="home-container">
+  <view id='home'>
+    <view class='backgroundcolor'></view>
+    <view class='searchwrapper'>
+      <icon type="search" size="12" class='searchicon' ></icon>
+      <input class = 'searchbox' placeholder='搜索' placeholder-class='placeholder-text'>
+      </input>
+      <view class='searchbutton'>搜一搜</view>
+    </view>
+    <view class='tagtext'>请选择一个标签</view>
+    <classified bind:classifychagne='classifychagne'></classified>
+    <searchpicker></searchpicker>
+  </view>
+</view>

@@ -1,4 +1,28 @@
 /* component/tabbar/tabbar.wxss */
+.arrow{
+  position: fixed;
+  bottom: 80rpx;
+  left: 0px;
+  right: 0px;
+  width: 40rpx;
+  height: 40rpx;
+  margin:auto;
+  z-index: 99;
+}
+/* .arrow-o{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0px;
+  right: 0px;
+  width: 40rpx;
+  height: 40rpx;
+  margin:auto;
+  z-index: 99;
+} */
+.arrow image{
+  width: 40rpx;
+  height: 40rpx;
+}
 .wrap_bar{
   background-color: #FFFFFF;
   width:470rpx;

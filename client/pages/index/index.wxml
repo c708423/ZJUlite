@@ -3,15 +3,12 @@
   <view bindtap='cancelWhitepoint' id='home' class="{{showView['home'] ? '':'viewhidden'}}">
     <view class='backgroundcolor'></view>
     <view class='searchtag'>
-    <searchtag bind:searchStatusChange="searchStatusChange"></searchtag>
+    <searchtag></searchtag>
     </view>
-    <view class="{{pullstatus && !searchstatus? '':'viewhidden'}}">
+    <view class="{{pullstatus ? '':'viewhidden'}}">
       <tipbox bind:checknews="redirectToNews"></tipbox>
     </view>
     <classified></classified>
-    <view class="{{pullstatus && searchstatus? '':'viewhidden'}}">
-      <searchpicker></searchpicker>
-    </view>
     <view class='mid-tip-msg'>
       <p>
         最新消息
@@ -41,7 +38,7 @@
   <view id='msg' class="{{showView['new-msg'] ? '':'viewhidden'}}">
   </view>
   <view id='user' class="{{showView['user'] ? '':'viewhidden'}}">
-    <userprofile name='{{userInfo.nickName}}' avaurl='{{userInfo.avatarUrl}}'><button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击测试登录接口</button></userprofile>
+    <userprofile name='{{userInfo.nickName}}' avaurl='{{userInfo.avatarUrl}}' logged='{{logged}}'><button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击测试登录接口</button></userprofile>
     <label class='usertip'>与我相关</label>
 
     <view class="weui-cells weui-cells_after-title">

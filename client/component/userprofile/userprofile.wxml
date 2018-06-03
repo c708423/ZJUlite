@@ -1,11 +1,19 @@
 <!--component/userprofile/userprofile.wxml-->
-<view class='userprofile-class'>
+<view class='userprofile-class' bindtap='register'>
   <view class='user-head'>
     <view class='headimg-wrap'>
       <image src = src="{{avaurl}}">
       </image>
     </view>
   </view>
-  <title class='user-name'> {{name}} </title>
+  <view class='rightbox'>
+    <title class='user-name' wx:if="{{!logged}}"> 未登录 </title>
+    <title class='user-name' wx:else> {{name}} </title>
+    <view class='is-register'>
+      <view class='text'>未认证？</view>
+      <view class='link'>浙大邮箱激活</view>
+    </view>
+  </view>
+  <title class='user-name'>  </title>
   <slot></slot>
 </view>

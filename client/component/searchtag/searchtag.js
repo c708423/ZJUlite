@@ -23,13 +23,16 @@ Component({
       this.setData({
         iconleft:80
       })
-      this.triggerEvent('searchStatusChange')
+      wx.navigateTo({
+        url: '../search/search',
+      })
+      //this.triggerEvent('searchStatusChange')
     },
     tapleave:function(){
       this.setData({
         iconleft: 300
       })
-      this.triggerEvent('searchStatusChange')
+      //this.triggerEvent('searchStatusChange')
     }
   }
 })

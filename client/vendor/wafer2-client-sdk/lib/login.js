@@ -161,7 +161,7 @@ var setLoginUrl = function (loginUrl) {
  * @param {Function} options.fail(error) 登录失败后的回调函数，参数 error 错误信息
  */
 var requestLogin = function requestLogin(options) {
-
+  //console.log(defaultOptions.loginUrl)
   if (!/http/.test(defaultOptions.loginUrl)) {
     options.fail(new LoginError(constants.ERR_INVALID_PARAMS, '登录错误：缺少登录地址，请通过 setLoginUrl() 方法设置登录地址'));
     return;
@@ -174,7 +174,7 @@ var requestLogin = function requestLogin(options) {
   var encryptedData = options.loginParams.encryptedData;
   var iv = options.loginParams.iv;
   var header = {};
-
+  console.log(options)
   header[constants.WX_HEADER_CODE] = code;
   header[constants.WX_HEADER_ENCRYPTED_DATA] = encryptedData;
   header[constants.WX_HEADER_IV] = iv;

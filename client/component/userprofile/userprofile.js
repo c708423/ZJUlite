@@ -17,6 +17,10 @@ Component({
       observer: function (newData, oldData) {
         if (newData == '') this.setData({ name: oldData });
       }
+    },
+    logged:{
+      type:Boolean,
+      value:false
     }
   },
 
@@ -31,6 +35,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    register: function () {
+      if (this.data.logged) {
+        wx.navigateTo({
+          url: '../register/register'
+        })
+      }
+    }
   }
 })
