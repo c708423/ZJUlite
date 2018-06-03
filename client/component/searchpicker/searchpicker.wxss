@@ -33,7 +33,9 @@
   padding-left: 50rpx;
   padding-right: 50rpx; 
 }
-
+.timelastboxpick{
+  background-color: #636e72 !important;
+}
 .memo{
   font-size: 22rpx;
   text-align: center;
@@ -45,4 +47,7 @@
 picker-view{
   margin-top: 30rpx;
   margin-bottom: 30rpx;
+}
+.displaynone{
+  display: none;
 }

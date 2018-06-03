@@ -125,26 +125,27 @@ Page({
       url: '../postinfo/postinfo?id=classy1'
     })
   },
-  searchStatusChange: function(){
-    var that = this
-    var nowstatus = this.data.searchstatus
-    nowstatus = 1 - nowstatus
-    this.setData({
-      searchstatus: nowstatus
-    })
-  },
-  searchStatusChange: function(){
-    var that = this
-    var nowstatus = this.data.searchstatus
-    nowstatus = 1 - nowstatus
-    this.setData({
-      searchstatus: nowstatus
+  // searchStatusChange: function(){
+  //   var that = this
+  //   var nowstatus = this.data.searchstatus
+  //   nowstatus = 1 - nowstatus
+  //   this.setData({
+  //     searchstatus: nowstatus
+  //   })
+  //   wx.navigateTo({
+  //     url: '../search/search',
+  //   })
+  // },
+  opensearchpage:function(){
+    wx.navigateTo({
+      url: '../search/search',
     })
   },
   bindGetUserInfo: function (e) {
     if (this.data.logged) return;
     util.showBusy('正在登录');
     var that = this;
+    console.log(e.detail)
     var userInfo = e.detail.userInfo;
     // 查看是否授权
     wx.getSetting({

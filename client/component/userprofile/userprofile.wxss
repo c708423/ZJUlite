@@ -6,7 +6,7 @@
   margin-bottom: 9rpx;
   background-color:white;
   position:relative;
-
+  align-items: center;
 }
 .userprofile-class button {
 position:absolute;
@@ -34,4 +34,18 @@ opacity:0;
   font-size:34rpx;
   color:#000000;
   padding-top:38rpx;
+}
+.is-register{
+  display: flex;
+  direction: row;
+  font-size: 26rpx;
+}
+.is-register .text{
+  color: #353535;
+}
+.is-register .link{
+  color: #0eb9e7;
+}
+.rightbox{
+  display: block;
 }

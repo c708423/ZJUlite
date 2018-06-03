@@ -1,0 +1,73 @@
+/* pages/search/search.wxss */
+.home-container{
+    padding-top:0rpx;
+    padding-bottom:0rpx;
+    padding-left:25.93rpx;
+    padding-right:25.93rpx;
+    padding-bottom:45rpx;
+}
+
+.backgroundcolor{
+    background: linear-gradient(180deg, #22f4b1 , #0eb9e7);
+    height:280rpx;
+    position: absolute;
+    top:0rpx;
+    left:0rpx;
+    right:0rpx;
+    z-index:-1;
+}
+.searchwrapper{
+  /* justify-content: center;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  height: 60rpx;
+  width: 100%;
+}
+
+.searchicon{
+  position: absolute;
+  z-index:5;
+  top:33rpx;
+  left: 100rpx;
+}
+.searchbox{
+    background-color: #FFFFFF;
+    width:300rpx;
+    height:60rpx;
+    top: 15rpx;
+    position:relative;
+    border-radius: 76rpx;
+    padding-left:90rpx;
+    padding-right:90rpx;
+    text-align: center;
+    font-size:23rpx;
+}
+.placehoder-text{
+  left: 100rpx;
+  font-size: 30rpx;
+}
+.searchbutton{
+  position:relative;
+  height: 60rpx;
+  font-size: 35rpx;
+  color: #FFFFFF !important;
+  background: none !important;
+  top: 15rpx;
+  margin-left: 20rpx;
+}
+.searchbutton::after{
+  border: none;
+}
+.tagtext{
+  width: 100%;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 25rpx;
+  position: relative;
+  top: 30rpx;
+}

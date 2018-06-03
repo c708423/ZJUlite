@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "tabbar": "../../component/tabbar/tabbar",
+    "searchtag": "../../component/searchtag/searchtag",
+    "contentcard": "../../component/contentcard/contentcard",
+    "classified": "../../component/classified/classified",
+    "userprofile": "../../component/userprofile/userprofile",
+    "msgbox": "../../component/msgbox/msgbox"
+  },
+  "backgroundColorTop": "#22f4b1",
+  "backgroundColorBottom": "#FCFAFA",
+  "backgroundColor": "#FCFAFA",
+  "navigationBarBackgroundColor": "#22f4b1",
+  "navigationBarTitleText": "激活账户"
+}
