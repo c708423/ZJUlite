@@ -42,7 +42,7 @@
           <view style="display: inline-block; vertical-align: middle">原价</view>
         </view>
         <view class="weui-cell__bd1">
-          <input class="weui-input" type="number" placeholder="0.00" />
+          <input class="weui-input" type="number" placeholder="0.00" bindinput="priceoldinput"/>
         </view>
       </view>
       <view class="weui-cell weui-cell_access">
@@ -50,7 +50,7 @@
           <view style="display: inline-block; vertical-align: middle">售价</view>
         </view>
         <view class="weui-cell__bd1">
-          <input class="weui-input" type="number" placeholder="0.00" />
+          <input class="weui-input" type="number" placeholder="0.00" bindinput="pricenewinput"/>
         </view>
       </view>
     </view>

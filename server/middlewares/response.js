@@ -11,7 +11,7 @@ module.exports = async function (ctx, next) {
         // 处理响应结果
         // 如果直接写入在 body 中，则不作处理
         // 如果写在 ctx.body 为空，则使用 state 作为响应
-        debug(ctx.body)
+        console.log(ctx.state.data)
         ctx.body = ctx.body ? ctx.body : {
             code: ctx.state.code !== undefined ? ctx.state.code : 0,
             data: ctx.state.data !== undefined ? ctx.state.data : {}
@@ -28,6 +28,6 @@ module.exports = async function (ctx, next) {
             code: -1,
             error: e && e.message ? e.message : e.toString()
         }
-        console.log(ctx)
+        // console.log(ctx)
     }
 }

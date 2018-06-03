@@ -180,6 +180,18 @@ Page({
       }
     });
   },
+  onLoad: function(){
+      wx.request({
+        url: config.service.hosturl + 'getinfo',
+        data:{
+          lastid:0
+        },
+        method:'GET',
+        success: function(res) {
+          console.log(res);
+        }
+      })
+  },
   doLogin: function (options) {
     var that = this;
     wx.login({

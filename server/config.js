@@ -10,7 +10,6 @@ const CONF = {
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: true,
-
     /**
      * MySQL 配置，用来存储 session 和用户信息
      * 若使用了腾讯云微信小程序解决方案
@@ -24,7 +23,14 @@ const CONF = {
         pass: '0MXEHZUC4T0t',
         char: 'utf8mb4'
     },
-
+    logic_mysql: {
+        host: 'gz-cdb-il7l822i.sql.tencentcdb.com',
+        port: 62581,
+        user: 'root',
+        db: 'data',
+        pass: '0MXEHZUC4T0t',
+        char: 'utf8mb4'
+    },
     cos: {
         /**
          * 地区简称
@@ -32,7 +38,7 @@ const CONF = {
          */
         region: 'ap-guangzhou',
         // Bucket 名称
-        fileBucket: 'qcloudtest',
+        fileBucket: 'qcloudtest-1253153042',
         // 文件夹
         uploadFolder: ''
     },

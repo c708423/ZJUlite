@@ -6,6 +6,8 @@ var util = require('../../utils/util.js')
 Page({
   data: {
     files: [],
+    newprice: 0,
+    oldprice: 0,
     classify_map:{
       'classy0':'学业疑难',
       'classy1':'仙女集市',
@@ -77,6 +79,12 @@ Page({
     })
     
   },
+  pricenewinput: function(e) {
+    this.setData({newprice:e.detail.value});
+  },
+  priceoldinput: function(e) {
+    this.setData({oldprice:e.detail.value})
+  },
   previewImage: function (e) {
     var i,k=[];
     for (i=0;i<this.data.files.length;i++){
@@ -136,16 +144,19 @@ Page({
       haveimg = 1;
       imgurl = this.data.files[0].posturl
     }
+    console.log(this.data.oldprice)
     qcloud.request({
       url: config.service.hosturl + 'infopost',
-      method:"post",
+      method:"POST",
       data:{
         classify:that.data.classify_map[that.data.nowclass],
         content:that.data.content,
         haveimg: haveimg,
         imgurl: imgurl,
-        localvisible: that.data.checkboxItems.checked,
-        location:nowposition
+        localvisible: that.data.checkboxItems[0].checked,
+        location:nowposition,
+        oldprice:that.data.oldprice,
+        newprice:that.data.newprice
       },
       success (res){
         console.log(res);

@@ -20,6 +20,8 @@ router.get('/test', async function (ctx, next) {
 })
 // 信息上传接口
 router.post('/infopost', validationMiddleware, controllers.infopost)
+// 信息获取接口
+router.get('/getinfo', controllers.getinfo)
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)
@@ -35,5 +37,9 @@ router.post('/tunnel', controllers.tunnel.post)
 router.get('/message', controllers.message.get)
 // POST 用来处理微信转发过来的客服消息
 router.post('/message', controllers.message.post)
+
+// post激活用户的zju身份
+router.post('/register',  controllers.register)
+router.get('/registerback', controllers.registerback)
 
 module.exports = router

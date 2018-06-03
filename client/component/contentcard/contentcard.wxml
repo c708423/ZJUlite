@@ -1,10 +1,46 @@
 <!--component/contentcard/contentcard.wxml-->
 <view class='cardstyle redtip' bind:transparencyRefresh="transparencyRefresh">
-   <view class='card-title'>
-      <span>失物招领</span>
-   </view>
-   <view class = 'card-content'>
-      <p>asdfasdjkfhjweuasd<br/>
-      sdsdsd</p>
-   </view>
+  <view class='bookmark' bindtap='clickbookmark'>
+    <image src="{{bookmark[bookmarknow]}}"/> 
+  </view>
+  <view class='card-title'>
+    <view class='card-title-color'></view>
+    <span>失物招领</span>
+  </view>
+  <view class='card-content'>
+    <p>asdfasdjkfhjweuasd
+      <br/> sdsdsd
+    </p>
+  </view>
+  <view class='cardbar'>
+    <view class='card-time'>
+      今天20:00
+    </view>
+    <view class='controller-bar'>
+      <view class='heart' bindtap="clickheart">
+        <view>
+          <image src="{{heart_icon[heartnow]}}" />
+        </view>
+        <span>
+          123
+        </span>
+      </view>
+      <view class='comment' bindtap="clickcomment">
+        <view>
+          <image src="/asset/icon/comment.png" />
+        </view>
+        <span>
+          123
+        </span>
+      </view>
+
+      <view class='hiddenicon'>
+        <view>
+          <image/>
+        </view>
+        <span>
+        </span>
+      </view>
+    </view>
+  </view>
 </view>
