@@ -1,0 +1,36 @@
+<!--pages/infodetail/infodetail.wxml-->
+<view class="home-container">
+  <view class='backgroundcolor'></view>
+  <view class='userfilebox'>
+    <view class='imgwrap'>
+      <image src='{{poster.avatar}}' mode='scaleToFill'></image>
+    </view>
+    <view class='textwrap'>
+      <view class='nickname'>{{poster.nickname}}</view>
+      <view class='logintime'>{{poster.logintime}}</view>
+    </view>
+  </view>
+  <view class='card-title'>
+      <view class='titleleftborder' style='background: {{infoclasscolor[info.infoclass]}}'></view>
+      <view class='titletext'>{{infoclasstext[info.infoclass]}}</view>
+   </view>
+  <view class='detail'>
+    <view class='text'>{{info.infodetail}}</view>
+    <image class="{{info.photos===[]}}?'displaynone':''"></image>
+  </view>
+  <view class='tags'>
+    <view class='icon' bindtap='changelikestatus'>
+      <image src="{{info.likestatus===0 ? '/asset/icon/heart-b.png' : '/asset/icon/heart-o.png'}}" ></image>
+    </view>
+    <view class='text'>{{info.likenum}} likes</view>
+    <view class='icon'>
+      <image src="/asset/icon/comment.png" ></image>
+    </view>
+    <view class='text'>{{info.commentnum}} comments</view>
+  </view>
+  <view class='hr'></view>
+  <view class='commentbox'>
+    
+  </view>
+</view>
+

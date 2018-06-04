@@ -1,10 +1,38 @@
 <!--component/contentcard/contentcard.wxml-->
-<view class='cardstyle redtip' bind:transparencyRefresh="transparencyRefresh">
+<view class='cardstyle' bindtap='checkfordetail'>
    <view class='card-title'>
-      <span>失物招领</span>
+      <view class='titleleftborder' style='background: {{infoclasscolor[infoclass]}}'></view>
+      <view class='titletext'>{{infoclasstext[infoclass]}}</view>
    </view>
    <view class = 'card-content'>
-      <p>asdfasdjkfhjweuasd<br/>
-      sdsdsd</p>
+      <view class='tagbox' bindtap='changetagstatus'>
+        <image src="{{tagstatus===0 ? '/asset/icon/tag-grey.png' : '/asset/icon/tag-blue.png'}}" ></image>
+      </view>
+      <view class='text'>{{briefinfo}}</view>
+      <view class="photo {{indexphoto==='' ? 'displaynone':''}}">
+        <image src='{{indexphoto}}' mode='widthFix'></image>
+      </view>
+      <view class='timetext'>{{date}}</view>
+      <view class='bottomtags'>
+        <view class='tagandtext'bindtap='changelikestatus'>
+          <image src="{{likestatus===0 ? '/asset/icon/like-grey.png' : '/asset/icon/like-red.png'}}" ></image>
+          <view class='text'>{{likenum}}</view>
+        </view>
+        <view class='tagandtext' bindtap='changecommentstatus'>
+          <image src="{{commentstatus===0 ? '/asset/icon/comment-hide.png' : '/asset/icon/comment-show.png'}}" ></image>
+          <view class='text'>{{commentnum}}</view>
+        </view>
+        <view class='tagandtext' bindtap='changeseestatus'>
+          <image src="{{seestatus===0 ? '/asset/icon/see-hide.png' : '/asset/icon/see-show.png'}}"  ></image>
+        </view>
+      </view>
    </view>
+   
+</view>
+<view class="cardstyle-o {{commentstatus===0 ? 'displaynone' : ''}}">
+  <image src='/asset/icon/triangle.png'></image>
+  <view class='commentbox' wx:for="{{comments}}" wx:for-index="idx" wx:for-item="item">
+    <view wx:if="{{item.to===''}}" class='margincheck'> {{item.poster}}：{{item.comment}} </view>
+    <view wx:else class='margincheck'> {{item.poster}}<span>回复</span>{{item.to}}：{{item.comment}} </view>
+  </view>
 </view>

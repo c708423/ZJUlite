@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/postinfo/postinfo",
     "pages/register/register",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/infodetail/infodetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
