@@ -1,36 +1,40 @@
 <!--component/contentcard/contentcard.wxml-->
-<view class='cardstyle redtip' bind:transparencyRefresh="transparencyRefresh">
-  <view class='bookmark' bindtap='clickbookmark'>
+<view class='cardstyle' bind:transparencyRefresh="transparencyRefresh" bindtap="opendetail">
+  <view class='bookmark' catchtap='clickbookmark'>
     <image src="{{bookmark[bookmarknow]}}"/> 
   </view>
   <view class='card-title'>
     <view class='card-title-color'></view>
-    <span>失物招领</span>
+    <span>{{classify}}</span>
   </view>
   <view class='card-content'>
-    <p>asdfasdjkfhjweuasd
-      <br/> sdsdsd
+    <p>
+    {{content}}
     </p>
   </view>
+
+  <view class='brief-img {{haveimg == 1 ? "":"hidden"}}'>
+  <image src="{{imgurl}}" mode="aspectFit"/>
+  </view>
   <view class='cardbar'>
-    <view class='card-time'>
-      今天20:00
-    </view>
+    <view class='card-time'>  
+      {{showtime}}
+    </view> 
     <view class='controller-bar'>
-      <view class='heart' bindtap="clickheart">
+      <view class='heart' catchtap="clickheart">
         <view>
           <image src="{{heart_icon[heartnow]}}" />
         </view>
         <span>
-          123
+          {{likes == '0'? '' : likes}}
         </span>
       </view>
-      <view class='comment' bindtap="clickcomment">
+      <view class='comment' catchtap="clickcomment">
         <view>
           <image src="/asset/icon/comment.png" />
         </view>
         <span>
-          123
+          {{comment}}
         </span>
       </view>
 
@@ -42,5 +46,10 @@
         </span>
       </view>
     </view>
+  </view>
+  <view class = 'comment-brief {{commentstatus == 0 ? "hidden": ""}}'>
+    <view class='comment-msg'>wwwwwww:   1237894123789471239</view>
+        <view class='comment-msg'>wwwwwww:   1237894123789471239</view>
+            <view class='comment-msg'>wwwwwww:   1237894123789471239</view>
   </view>
 </view>

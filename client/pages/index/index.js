@@ -6,7 +6,9 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
-    contentcard:['1','2','3','4','5','6','7','8'],
+    contentcard:[],
+    lastid:0,
+    allinfoget:0,
     talkcard:[
       { id: 'msgbox1', title: 'Qc0', content: 'sili23i收到收到机收到收到机收到收到机收到收到机收到收到机卡士力架老师看大家阿斯顿快乐机啊3李丹空间l'},
       { id: 'msgbox2', title: 'Qc1', content: 'si32il'},
@@ -85,14 +87,29 @@ Page({
   },
   onReachBottom : function(){
       console.log('onReachBottom');
+      if (this.data.allinfoget == 1) return;
       var that = this;
       setTimeout(function(){
-        var len = that.data.contentcard.length;
-        that.data.contentcard.push(len + 1);
-        that.data.contentcard.push(len + 2);
-        that.data.contentcard.push(len + 3);
+        wx.request({
+          url: config.service.hosturl + 'getinfo',
+          data: {
+            lastid: that.data.lastid
+          },
+          method: 'GET',
+          success: function (res) {
+            if (res.data.data.length == 0) {
+              that.setData({ allinfoget:1});
+              return;
+            }
+            that.setData({ lastid: res.data.data[res.data.data.length - 1].id })
+            var tmpcontent = that.data.contentcard;
+            tmpcontent = tmpcontent.concat(res.data.data);
+            that.setData({contentcard: tmpcontent})
+            console.log(tmpcontent)
+          }
+        })
         that.setData({ contentcard: that.data.contentcard });
-      }, 1000);
+      }, 500);
   },
   onPullDownRefresh: function () {
       var that=this
@@ -103,10 +120,9 @@ Page({
       //以下做数据处理
       setTimeout(function(){
         wx.stopPullDownRefresh()
-        that.setData({
-          pullstatus: 1
-        })
-      },3000)
+        that.onLoad()
+        this.setData({pullstatus:1})
+      },1000)
   },
   allgoback: function(){
     var that = this;
@@ -182,6 +198,7 @@ Page({
     });
   },
   onLoad: function(){
+      var that = this
       wx.request({
         url: config.service.hosturl + 'getinfo',
         data:{
@@ -189,7 +206,10 @@ Page({
         },
         method:'GET',
         success: function(res) {
-          console.log(res);
+          that.setData({ contentcard:res.data.data})
+          console.log(res.data.data.length)
+          that.setData({ lastid: res.data.data[res.data.data.length - 1].id})
+          console.log(that.data.lastid)
         }
       })
   },
