@@ -1,4 +1,6 @@
 // component/contentcard/contentcard.js
+var that=this;
+var util = require('../../utils/util.js')
 Component({
   /**
    * 组件的属性列表
@@ -14,10 +16,10 @@ Component({
     time: {
       type: String,
       value: '',
-      observer: function (newVal, oldVal) { 
+      observer: function (newVal, oldVal) {
         var t = new Date(newVal)
         this.setData({ showtime: this._timeToDate(t)})
-      } 
+      }
     },
     showtime:{
       type:String,
@@ -86,12 +88,12 @@ Component({
     },
     _timeToDate: function (date) {
       //获取js 时间戳
-      
+
       var time = new Date().getTime();
       //去掉 js 时间戳后三位，与php 时间戳保持一致
       time = parseInt((time - date.getTime()) / 1000);
 
-      //存储转换值 
+      //存储转换值
       var s;
       if (time < 60 * 10) {//十分钟内
         return '刚刚';

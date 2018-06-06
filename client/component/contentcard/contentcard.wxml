@@ -1,7 +1,7 @@
 <!--component/contentcard/contentcard.wxml-->
 <view class='cardstyle' bind:transparencyRefresh="transparencyRefresh" bindtap="opendetail">
   <view class='bookmark' catchtap='clickbookmark'>
-    <image src="{{bookmark[bookmarknow]}}"/> 
+    <image src="{{bookmark[bookmarknow]}}"/>
   </view>
   <view class='card-title'>
     <view class='card-title-color'></view>
@@ -17,9 +17,9 @@
   <image src="{{imgurl}}" mode="aspectFit"/>
   </view>
   <view class='cardbar'>
-    <view class='card-time'>  
+    <view class='card-time'>
       {{showtime}}
-    </view> 
+    </view>
     <view class='controller-bar'>
       <view class='heart' catchtap="clickheart">
         <view>
