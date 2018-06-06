@@ -10,8 +10,11 @@
     <title class='user-name' wx:if="{{!logged}}"> 未登录 </title>
     <title class='user-name' wx:else> {{name}} </title>
     <view class='is-register'>
+      <block wx:if = '{{ZJUpass == 0}}'>
       <view class='text'>未认证？</view>
       <view class='link'>浙大邮箱激活</view>
+      </block>
+
     </view>
   </view>
   <title class='user-name'>  </title>

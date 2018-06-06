@@ -174,7 +174,6 @@ var requestLogin = function requestLogin(options) {
   var encryptedData = options.loginParams.encryptedData;
   var iv = options.loginParams.iv;
   var header = {};
-  console.log(options)
   header[constants.WX_HEADER_CODE] = code;
   header[constants.WX_HEADER_ENCRYPTED_DATA] = encryptedData;
   header[constants.WX_HEADER_IV] = iv;
@@ -187,13 +186,12 @@ var requestLogin = function requestLogin(options) {
     success: function (result) {
       var data = result.data;
       // 成功地响应会话信息
-      console.log('requestlogin',result);
       if (data && data.code === 0 && data.data.skey) {
         var res = data.data
 
         if (res.userinfo) {
           Session.set(res);
-          options.success();
+          options.success(res.appuser);
         } else {
           var errorMessage = '登录失败(' + data.error + ')：' + (data.message || '未知错误');
           var noSessionError = new LoginError(constants.ERR_LOGIN_SESSION_NOT_RECEIVED, errorMessage);

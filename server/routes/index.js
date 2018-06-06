@@ -5,14 +5,13 @@ const router = require('koa-router')({
     prefix: '/weapp'
 })
 const controllers = require('../controllers')
-
+const userstorage = require('../middlewares/userstorage')
 // 从 sdk 中取出中间件
 // 这里展示如何使用 Koa 中间件完成登录态的颁发与验证
 const { auth: { authorizationMiddleware, validationMiddleware } } = require('../qcloud')
-
 // --- 登录与授权 Demo --- //
 // 登录接口
-router.get('/login', authorizationMiddleware, controllers.login)
+router.get('/login', authorizationMiddleware, userstorage, controllers.login)
 // 用户信息接口（可以用来验证登录态）
 router.get('/user', validationMiddleware, controllers.user)
 router.get('/test', async function (ctx, next) {
@@ -39,7 +38,7 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 
 // post激活用户的zju身份
-router.post('/register',  controllers.register)
+router.post('/register', controllers.register)
 router.get('/registerback', controllers.registerback)
 
 module.exports = router

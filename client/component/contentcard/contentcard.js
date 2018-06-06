@@ -4,6 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    nickname:{
+      type:String
+    },
     classify:{
       type: String,
       value:''
@@ -106,7 +109,6 @@ Component({
         return s + "天前";
       } else {
         //超过3天
-        var date = new Date(parseInt(date) * 1000);
         return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
       }
     },
@@ -118,16 +120,26 @@ Component({
     },
     opendetail: function(e){
       console.log(e);
+      var postdata = {
+        classify : this.data.classify,
+        content: this.data.content,
+        comment: this.data.comment,
+        likes: this.data.likes,
+        haveimg: this.data.haveimg,
+        imgurl: this.data.imgurl,
+        time: this.data.showtime,
+        nickname: this.data.nickname
+      }
       wx.setStorage({
-        key: '',
-        data: '',
+        key: 'infodetail',
+        data: postdata,
         success(){
-
+          wx.navigateTo({
+            url: '../detailinfo/detailinfo',
+          })
         }
       })
-        wx.navigateTo({
-          url: '../detailinfo/detailinfo',
-        })
+
     },
     clickcomment: function(e){
         var that = this;

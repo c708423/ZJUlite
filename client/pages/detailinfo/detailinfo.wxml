@@ -9,19 +9,19 @@
   </view>
   <view class='ownerprofile-right'>
     <view class='username'>
-      我
+      {{pageinfo.nickname}}
     </view>
     <view class='time'>
-      一天前
+      {{pageinfo.time}}
     </view>
   </view>
 </view>
 <view class='card-title'>
   <view class='card-title-color'></view>
-  <span>学业疑难</span>
+  <span>{{pageinfo.classify}}</span>
 </view>
 <view class='detail-content'>
-  给好几个工行卡给客户看过韩国客户更加客观环境考古很快就赶快好赶快回归健康可贵开花结果很看好公开课后即可感觉很
+  {{pageinfo.content}}
 </view>
 <view class='statusbar'>
   <view class='heart' bindtap="clickheart">
@@ -29,7 +29,7 @@
       <image src="/asset/icon/heart.png" />
     </view>
     <span>
-      12likes
+      {{pageinfo.likes}} likes
     </span>
   </view>
   <view class='comment' bindtap="clickcomment">
@@ -37,7 +37,7 @@
       <image src="/asset/icon/blankmsg.png" />
     </view>
     <span>
-      23comments
+      {{ pageinfo.comment.length}} comments
     </span>
   </view>
 
@@ -81,4 +81,10 @@
   </view>
 </view>
 <view class='getmore'>
+</view>
+<view class='submitcomment'>
+<input/>
+<view class='submit-button'>
+提交
+</view>
 </view>

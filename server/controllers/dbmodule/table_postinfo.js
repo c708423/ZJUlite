@@ -6,9 +6,9 @@ function insertinfo (options) {
 }
 function searchinfo (options) {
     if (options.id === 0) {
-        return mysql.select('*').from('infos').limit(8).orderBy('id', 'desc')
+        return mysql.select('*').from('infos').innerJoin('users', 'infos.owner', 'users.openid').limit(8).orderBy('id', 'desc')
     } else {
-        return mysql.select('*').from('infos').where('id', '<', options.id).limit(8).orderBy('id', 'desc')
+        return mysql.select('*').from('infos').innerJoin('users', 'infos.owner', 'users.openid').where('id', '<', options.id).limit(8).orderBy('id', 'desc')
     }
 }
 module.exports = {

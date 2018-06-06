@@ -4,6 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    ZJUpass: {
+      type: String,
+      valie:''
+    },
     avaurl: {
       type: String,
       value: '/asset/icon/1.jpg',

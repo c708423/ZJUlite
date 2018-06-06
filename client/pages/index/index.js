@@ -132,6 +132,8 @@ Page({
     });
   },
   pushnewinfo:function(){
+    console.log(this.data.userInfo.ZJUpass)
+    if (this.data.userInfo.ZJUpass == 0 || typeof this.data.userInfo.ZJUpass === 'undefined') return; 
     wx.navigateTo({
       url: '../postinfo/postinfo'
     })
@@ -171,18 +173,21 @@ Page({
           wx.checkSession({
             success: function () {
               // 登录态未过期
-              util.showSuccess('登陆成功');
-              console.log('登陆态未过期');
-              that.setData({
-                userInfo: userInfo,
-                logged: true
-              })
+              qcloud.clearSession();
+              // 登录态已过期，需重新登录
+              console.log('wxsession 未过期');
+              var options = {
+                encryptedData: e.detail.encryptedData,
+                iv: e.detail.iv,
+                userInfo: userInfo
+              }
+              that.doLogin(options);
             },
 
             fail: function () {
               qcloud.clearSession();
               // 登录态已过期，需重新登录
-              console.log('登陆态已过期');
+              console.log('wxsession 已过期');
               var options = {
                 encryptedData: e.detail.encryptedData,
                 iv: e.detail.iv,
@@ -224,10 +229,11 @@ Page({
         }
         console.log(loginResult);
         qcloud.requestLogin({
-          loginParams, success() {
+          loginParams, success(res) {
+            console.log('this is res',res)
             util.showSuccess('登录成功');
             that.setData({
-              userInfo: options.userInfo,
+              userInfo: res,
               logged: true
             })
           },

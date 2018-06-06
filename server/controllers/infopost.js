@@ -23,7 +23,7 @@ module.exports = async (ctx, next) => {
         } else {
             infodata.oldprice = 0
             infodata.newprice = 0
-            infodata.isgood = 0
+            infodata.isgoods = 0
         }
         // console.log('wxinfo', ctx.state.$wxInfo)
         table.insertinfo(infodata, {'owner': ctx.state.$wxInfo.userinfo.openId}).then((res) => {

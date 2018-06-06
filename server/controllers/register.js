@@ -21,11 +21,10 @@ const nodemailer = require('../node_modules/nodemailer')
 //     return result + 0.5;
 // }
 
-
 const register = async(ctx,next)=>{
-	const body = ctx.request.body
+    const body = ctx.request.body
 
-	//if (ctx.state.$wxInfo.loginState === 1) {
+	// if (ctx.state.$wxInfo.loginState === 1) {
         // loginState 为 1，登录态校验成功
         var zjuEmail= body.email //读取post数据
         var openid = body.userinfo.openId

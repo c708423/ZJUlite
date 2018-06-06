@@ -162,3 +162,8 @@ margin-right:50rpx;
   margin:0 auto;
   opacity:0.4;
 }
+.submitcomment{
+  position:absolute;
+  bottom:0rpx;
+  border:#0eb9e7 solid 1rpx;
+}
