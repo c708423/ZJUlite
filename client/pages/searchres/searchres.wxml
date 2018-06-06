@@ -1,0 +1,5 @@
+<!--pages/searchres/searchres.wxml-->
+<view class='home-container'></view>
+<view class='content-container'>
+      <contentcard wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" content="{{item.content}}" likes="{{item.marks}}" comment="{{item.comments}}" haveimg="{{item.haveimg}}" imgurl = "{{item.imgurl}}"> </contentcard>
+</view>

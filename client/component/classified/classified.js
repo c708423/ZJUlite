@@ -10,7 +10,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    selecttype: [0, 0, 0, 0, 0, 0, 0, 0]
+    selecttype: [0, 0, 1, 0, 0, 0, 0, 0]
   },
 
   /**
@@ -26,7 +26,7 @@ Component({
             selecttype : newarr
           })
           console.log(this.data.selecttype);
-          this.triggerEvent("classifychagne",{'id':e.currentTarget.id},{});
+          this.triggerEvent("classifychange",{'id':e.currentTarget.id},{});
       }
   }
 })

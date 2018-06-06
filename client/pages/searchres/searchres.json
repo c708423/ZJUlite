@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "contentcard": "../../component/contentcard/contentcard",
+    "classified": "../../component/classified/classified"
+  },
+  "backgroundColorTop": "#22f4b1",
+  "backgroundColorBottom": "#FCFAFA",
+  "navigationBarBackgroundColor": "#22f4b1",
+  "navigationBarTitleText": "搜索结果"
+}

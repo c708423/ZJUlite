@@ -1,0 +1,84 @@
+<!--pages/detailinfo/detailinfo.wxml-->
+<view class='backgroundcolor'></view>
+<view class='ownerprofile'>
+  <view class='ownerprofile-left'>
+    <view class='headimg-wrap'>
+      <image src="{{avaurl}}">
+      </image>
+    </view>
+  </view>
+  <view class='ownerprofile-right'>
+    <view class='username'>
+      我
+    </view>
+    <view class='time'>
+      一天前
+    </view>
+  </view>
+</view>
+<view class='card-title'>
+  <view class='card-title-color'></view>
+  <span>学业疑难</span>
+</view>
+<view class='detail-content'>
+  给好几个工行卡给客户看过韩国客户更加客观环境考古很快就赶快好赶快回归健康可贵开花结果很看好公开课后即可感觉很
+</view>
+<view class='statusbar'>
+  <view class='heart' bindtap="clickheart">
+    <view>
+      <image src="/asset/icon/heart.png" />
+    </view>
+    <span>
+      12likes
+    </span>
+  </view>
+  <view class='comment' bindtap="clickcomment">
+    <view>
+      <image src="/asset/icon/blankmsg.png" />
+    </view>
+    <span>
+      23comments
+    </span>
+  </view>
+
+</view>
+<view class='br'>
+</view>
+<view class='comment-content'>
+  <view class='comment-level'>
+    <view class='comment-1user'>
+      <view class='comment-1user-left'>
+        <view class='comment-headimg-wrap'>
+          <image src="{{avaurl}}">
+          </image>
+        </view>
+      </view>
+      <view class='comment-1user-right'>
+        <view class='comment-user-name'>
+          123
+        </view>
+        <view class='comment-user-content'>
+          234432
+        </view>
+      </view>
+    </view>
+    <view class='comment-2user'>
+          <view class='comment-2user-left'>
+        <view class='comment-headimg-wrap'>
+          <image src="{{avaurl}}">
+          </image>
+        </view>
+      </view>
+      <view class='comment-2user-right'>
+        <view class='comment-user-name'>
+          123
+        </view>
+        <view class='comment-user-content'>
+          234432
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='getmore'>
+</view>

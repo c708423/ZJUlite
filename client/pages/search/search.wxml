@@ -4,12 +4,12 @@
     <view class='backgroundcolor'></view>
     <view class='searchwrapper'>
       <icon type="search" size="12" class='searchicon' ></icon>
-      <input class = 'searchbox' placeholder='搜索' placeholder-class='placeholder-text'>
+      <input class = 'searchbox' placeholder='搜索' placeholder-class='placeholder-text' focus="{{focus}}" confirm-type="search" bindconfirm='gotosearch' bindinput='bindKeyInput'>
       </input>
-      <view class='searchbutton'>搜一搜</view>
+      <view class='searchbutton' bindtap='tapsearch'>搜一搜</view>
     </view>
     <view class='tagtext'>请选择一个标签</view>
-    <classified bind:classifychagne='classifychagne'></classified>
-    <searchpicker></searchpicker>
+    <classified bind:classifychange='classifychange'></classified>
+    <searchpicker bind:changestatus='changestatus'></searchpicker>
   </view>
 </view>

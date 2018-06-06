@@ -1,0 +1,9 @@
+/* pages/searchres/searchres.wxss */
+.home-container{
+    padding-top:0rpx;
+    padding-bottom:0rpx;
+    padding-left:25.93rpx;
+    padding-right:25.93rpx;
+    padding-bottom:45rpx;
+    overflow-x:hidden;
+}

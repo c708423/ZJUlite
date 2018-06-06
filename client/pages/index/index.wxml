@@ -8,18 +8,18 @@
     <view class="{{pullstatus ? '':'viewhidden'}}">
       <tipbox bind:checknews="redirectToNews"></tipbox>
     </view>
-    <classified></classified>
+    <classified bind:classifychange="classifychange"></classified>
     <view class='mid-tip-msg'>
       <p>
         最新消息
       </p>
     </view>
     <view id='content-container' class='content-container'>
-      <contentcard wx:for="{{contentcard}}" wx:key="id"> </contentcard>
+      <contentcard wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" content="{{item.content}}" likes="{{item.marks}}" comment="{{item.comments}}" haveimg="{{item.haveimg}}" imgurl = "{{item.imgurl}}"> </contentcard>
     </view>
     <view id='loadmore' class="weui-loadmore">
-      <view class="weui-loading"></view>
-      <view class="weui-loadmore__tips">正在加载</view>
+      <view class="weui-loading {{allinfoget == 0?'':'hidden'}}"></view>
+      <view class="weui-loadmore__tips">{{allinfoget==0?'正在加载':'没有更多啦'}}</view>
     </view>
     <view class='send-msg'>
       <view catchtap='pushnewinfo' class='white-point {{sendmsg_state == 0?"hidden":""}}'><image src="/asset/icon/free.png"></image></view>

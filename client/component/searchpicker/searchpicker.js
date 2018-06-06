@@ -48,45 +48,59 @@ Component({
       this.setData({
         pickmode:1
       })
+      this.changestatus()
     },
     totap: function () {
       this.setData({
         pickmode: 2
       })
+      this.changestatus()
     },
     aftertap: function () {
       this.setData({
         pickmode: 3
       })
+      this.changestatus()
     },
     threeday: function () {
       this.setData({
         pickmode: 4
       })
+      this.changestatus()
     },
     fiveday: function () {
       this.setData({
         pickmode: 5
       })
+      this.changestatus()
     },
     sevenday: function () {
       this.setData({
         pickmode: 6
       })
+      this.changestatus()
     },
     beforebindChange: function (e) {
       const val = e.detail.value
       this.setData({
         beforedate: [this.data.years[val[0]], this.data.months[val[1]], this.data.days[val[2]]]
       })
-      console.log(this.data.beforedate)
+      this.changestatus()
     },
     tobindChange: function (e) {
       const val = e.detail.value
       this.setData({
         todate: [this.data.years[val[0]], this.data.months[val[1]], this.data.days[val[2]]]
       })
-      console.log(this.data.todate)
+      this.changestatus()
+    },
+    changestatus:function(){
+      var status={
+        pickmode: this.data.pickmode,
+        beforedate: this.data.beforedate,
+        todate: this.data.todate
+      }
+      this.triggerEvent('changestatus', status)
     }
   }
 })
