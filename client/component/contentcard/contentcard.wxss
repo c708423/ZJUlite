@@ -10,7 +10,6 @@
   border-radius: 8rpx;
   margin-top:15rpx;
   font-family: PingFangSC-Light, sans-serif;
-<<<<<<< HEAD
   margin-bottom:45rpx;
   box-shadow: 0rpx 0rpx 1rpx 1rpx rgba(0,0,1,0.09);
   padding-top:24rpx;
@@ -27,50 +26,11 @@
 .cardstyle .card-title {
   font-size : 14pt;
   margin-left:40rpx;
-=======
-  box-shadow: 0rpx 0rpx 1rpx 1rpx rgba(0,0,1,0.09);
-  padding-top:24rpx;
-  padding-left:40rpx;
-  padding-right: 40rpx;
-  padding-bottom: 24rpx;
-  overflow-x: hidden;
-}
-.cardstyle-o{
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
-  background-color: #F3F3F3;
-  border-radius: 8rpx;
-  position: relative;
-  top: -5rpx;
-  font-family: PingFangSC-Light, sans-serif;
-  padding-top:24rpx;
-  padding-left:40rpx;
-  padding-right: 40rpx;
-  padding-bottom: 24rpx;
-}
-.cardstyle-o image{
-  position: absolute;
-  width: 35rpx;
-  height: 30rpx;
-  top: -20rpx;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 50;
-}
-.cardstyle .card-title {
-  position: relative;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
->>>>>>> pr/4
   margin-bottom:14rpx;
-  display:flex;    
+  display:flex;
   align-items: center;
 }
 .cardstyle .card-content{
-<<<<<<< HEAD
   font-size : 13pt;
     margin-left:40rpx;
   margin-right:40rpx;
@@ -158,82 +118,4 @@ right:20rpx;
     margin-right:40rpx;
     margin-bottom:15rpx;
     font-size:12pt;
-=======
-  font-size : 26rpx;
-  color:#353535;
-}
-.displaynone{
-  display: none;
-}
-.titletext{
-  margin-left: 20rpx;
-  letter-spacing: 2rpx;
-  font-size : 32rpx;
-  font-weight: bold;
-  color: #666666;
-}
-.titleleftborder{
-  height: 40rpx;
-  width: 10rpx;
-  align-self: center;
-}
-.tagbox{
-  position: absolute;
-  right:60rpx; 
-  top:0;
-  width: 40rpx;
-  height: 60rpx;
-}
-.tagbox image{
-  width: 40rpx;
-  height: 60rpx;
-}
-.timetext{
-  font-size: 20rpx;
-  color: #9A9898;
-  margin-top: 30rpx;
-}
-.bottomtags{
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-.tagandtext{
-  height: 30rpx;
-  width: 80rpx;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  margin-top: 10rpx;
-  align-items: center;
-  justify-content: flex-start;
-}
-.tagandtext image{
-  width: 35rpx;
-}
-.tagandtext .text{
-  width: 45rpx;
-  text-align: center;
-  font-size: 25rpx;
-  color: #9A9898;
-  line-height: 25rpx;
-}
-.commentbox span{
-  color: #4A90E2;
-}
-.commentbox{
-  color:#666666;
-  font-size: 26rpx;
-}
-
-.commnetbox .margincheck{
-  margin-bottom: 20rpx;
-}
-.photo{
-  margin-top: 20rpx;
-  width: 100%;
->>>>>>> pr/4
 }
