@@ -1,11 +1,13 @@
 {
   "component": true,
-  "usingComponents": {},
+  "usingComponents": {
+        "msginput": "../../component/msginput/msginput"
+  },
     "enablePullDownRefresh": true,
-    "backgroundColorTop": "#22f4b1",
+    "backgroundColorTop": "#8DDAD5",
     "backgroundColorBottom": "#FCFAFA",
-    "backgroundColor": "#22f4b1",
-    "navigationBarBackgroundColor": "#22f4b1",
+    "backgroundColor": "#8DDAD5",
+    "navigationBarBackgroundColor": "#8DDAD5",
     "navigationBarTitleText": "内容详情",
     "backgroundTextStyle": "dark",
     "onReachBottomDistance": 0

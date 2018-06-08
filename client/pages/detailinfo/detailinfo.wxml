@@ -1,90 +1,87 @@
 <!--pages/detailinfo/detailinfo.wxml-->
-<view class='backgroundcolor'></view>
-<view class='ownerprofile'>
-  <view class='ownerprofile-left'>
-    <view class='headimg-wrap'>
-      <image src="{{avaurl}}">
-      </image>
+<view bindtap="hideinput" style="height:100%">
+  <view class='backgroundcolor'></view>
+  <view class='ownerprofile'>
+    <view class='ownerprofile-left'>
+      <view class='headimg-wrap'>
+        <image src="{{pageinfo.avatarurl}}">
+        </image>
+      </view>
+    </view>
+    <view class='ownerprofile-right'>
+      <view class='username'>
+        {{pageinfo.nickname}}
+      </view>
+      <view class='time'>
+        {{pageinfo.time}}
+      </view>
     </view>
   </view>
-  <view class='ownerprofile-right'>
-    <view class='username'>
-      {{pageinfo.nickname}}
-    </view>
-    <view class='time'>
-      {{pageinfo.time}}
-    </view>
+  <view class='card-title'>
+    <view class='card-title-color'></view>
+    <span>{{pageinfo.classify}}</span>
   </view>
-</view>
-<view class='card-title'>
-  <view class='card-title-color'></view>
-  <span>{{pageinfo.classify}}</span>
-</view>
-<view class='detail-content'>
-  {{pageinfo.content}}
-</view>
-<view class='statusbar'>
-  <view class='heart' bindtap="clickheart">
-    <view>
-      <image src="/asset/icon/heart.png" />
-    </view>
-    <span>
-      {{pageinfo.likes}} likes
-    </span>
+  <view class='detail-content'>
+    {{pageinfo.content}}
   </view>
-  <view class='comment' bindtap="clickcomment">
-    <view>
-      <image src="/asset/icon/blankmsg.png" />
+  <view class='statusbar'>
+    <view class='heart' bindtap="clickheart">
+      <view>
+        <image src="/asset/icon/heart.png" />
+      </view>
+      <span>
+        {{pageinfo.likes}} likes
+      </span>
     </view>
-    <span>
-      {{ pageinfo.comment.length}} comments
-    </span>
-  </view>
+    <view class='comment' catchtap="clickcomment">
+      <view>
+        <image src="/asset/icon/blankmsg.png" />
+      </view>
+      <span>
+        {{ pageinfo.comment.length}} comments
+      </span>
+    </view>
 
-</view>
-<view class='br'>
-</view>
-<view class='comment-content'>
-  <view class='comment-level'>
-    <view class='comment-1user'>
-      <view class='comment-1user-left'>
-        <view class='comment-headimg-wrap'>
-          <image src="{{avaurl}}">
-          </image>
+  </view>
+  <view class='br'>
+  </view>
+  <view class='comment-content' wx:for="{{showcomment}}">
+    <view class='comment-level'>
+      <view class='comment-1user' id="{{item.id}}" catchtap="subcommentpost">
+        <view class='comment-1user-left'>
+          <view class='comment-headimg-wrap'>
+            <image src="{{item.avatarurl}}">
+            </image>
+          </view>
+        </view>
+        <view class='comment-1user-right'>
+          <view class='comment-user-name'>
+            {{item.nickname}}
+          </view>
+          <view class='comment-user-content' bindtap="subcommentpost_statechange">
+            {{item.content}}
+          </view>
         </view>
       </view>
-      <view class='comment-1user-right'>
-        <view class='comment-user-name'>
-          123
+      <view class='comment-2user' wx:for='{{item.subcomment}}'>
+        <view class='comment-2user-left'>
+          <view class='comment-headimg-wrap'>
+            <image src="{{item.avatarurl}}">
+            </image>
+          </view>
         </view>
-        <view class='comment-user-content'>
-          234432
-        </view>
-      </view>
-    </view>
-    <view class='comment-2user'>
-          <view class='comment-2user-left'>
-        <view class='comment-headimg-wrap'>
-          <image src="{{avaurl}}">
-          </image>
-        </view>
-      </view>
-      <view class='comment-2user-right'>
-        <view class='comment-user-name'>
-          123
-        </view>
-        <view class='comment-user-content'>
-          234432
+        <view class='comment-2user-right'>
+          <view class='comment-user-name'>
+            {{item.nickname}}
+          </view>
+          <view class='comment-user-content'>
+            {{item.content}}
+          </view>
         </view>
       </view>
     </view>
   </view>
-</view>
-<view class='getmore'>
-</view>
-<view class='submitcomment'>
-<input/>
-<view class='submit-button'>
-提交
-</view>
+  <view class='getmore'>
+  </view>
+  <msginput wx:if="{{inputstate}}" bindpostcomment='postcomment' placeoholdertext="{{placeoholdertext}}"></msginput>
 </view>

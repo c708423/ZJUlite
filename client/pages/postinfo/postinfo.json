@@ -7,8 +7,8 @@
     "userprofile": "../../component/userprofile/userprofile",
     "msgbox": "../../component/msgbox/msgbox"
   },
-  "backgroundColorTop": "#22f4b1",
+  "backgroundColorTop": "#8DDAD5",
   "backgroundColorBottom": "#FCFAFA",
-  "navigationBarBackgroundColor": "#22f4b1",
+  "navigationBarBackgroundColor": "#8DDAD5",
   "navigationBarTitleText": "发布消息"
 }

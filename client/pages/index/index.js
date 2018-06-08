@@ -248,5 +248,10 @@ Page({
         console.log('登录失败', loginError)
       },
     });
+  },
+  openchat: function(e){
+    wx.navigateTo({
+      url: '../chat/chat'
+    })
   }
 })

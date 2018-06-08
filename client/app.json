@@ -5,7 +5,8 @@
     "pages/postinfo/postinfo",
     "pages/register/register",
     "pages/search/search",
-    "pages/detailinfo/detailinfo"
+    "pages/detailinfo/detailinfo",
+    "pages/chat/chat"
   ],
   "window": {
     "backgroundTextStyle": "light",

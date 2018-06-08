@@ -15,7 +15,7 @@
       </p>
     </view>
     <view id='content-container' class='content-container'>
-      <contentcard wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" content="{{item.content}}" likes="{{item.marks}}" comment="{{item.comments}}" haveimg="{{item.haveimg}}" imgurl = "{{item.imgurl}}" nickname="{{item.nickname}}"> </contentcard>
+      <contentcard wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" content="{{item.content}}" likes="{{item.marks}}" comments="{{item.comments}}" haveimg="{{item.haveimg}}" imgurl = "{{item.imgurl}}" nickname="{{item.nickname}}" infoid="{{item.id}}" comment="{{item.comment}}" avatarurl="{{item.avatarurl}}"> </contentcard>
     </view>
     <view id='loadmore' class="weui-loadmore">
       <view class="weui-loading {{allinfoget == 0?'':'hidden'}}"></view>
@@ -28,7 +28,7 @@
     </view>
   </view>
   <view id='talk' class="{{showView['talk'] ? '':'viewhidden'}}" catch:touchstart='allgoback'>
-    <msgbox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox"></msgbox>
+    <msgbox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox" bindtap="openchat"></msgbox>
 
 
     <view class="{{pullstatus ? '':'viewhidden'}}">

@@ -20,13 +20,17 @@
 #talk{
   overflow-x: hidden;
 }
+#home{
+  overflow-x: hidden;
+  width:100%;
+}
 .backgroundcolor{
-    background: linear-gradient(180deg, #22f4b1 , #0eb9e7);
+    background: linear-gradient(180deg, #8DDAD5 , #00CDAC);
     height:280rpx;
-    position: fixed;
+    width:750rpx;
+    position: absolute;
     top:0rpx;
     left:0rpx;
-    right:0rpx;
     z-index:-999;
 }
 .usertip{
@@ -40,7 +44,7 @@
 }
 .mid-tip-msg {
   text-align: center;
-  font-size: 20rpx;
+  font-size: 25rpx;
   color:#0F47BB;
   font-family: PingFangSC-Light, sans-serif;
   margin-top : 16rpx;

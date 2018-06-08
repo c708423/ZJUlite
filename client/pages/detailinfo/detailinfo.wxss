@@ -1,8 +1,11 @@
 /* pages/detailinfo/detailinfo.wxss */
+page{
+  height:100%
+}
 .backgroundcolor{
-    background: linear-gradient(180deg, #22f4b1 , #0eb9e7);
-    height:200rpx;
-    position: fixed;
+    background: linear-gradient(180deg, #8DDAD5 , #00CDAC);
+    height:150rpx;
+    position: absolute;
     top:0rpx;
     left:0rpx;
     right:0rpx;
@@ -22,6 +25,11 @@
 }
 .detail-wrap {
     display:flex;
+}
+.headimg-wrap image{
+  height:100%;
+width:100%;
+
 }
 .headimg-wrap{
   height:100rpx;

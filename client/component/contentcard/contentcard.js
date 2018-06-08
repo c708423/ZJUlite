@@ -6,6 +6,12 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    avatarurl:{
+      type:String
+    },
+    infoid:{
+      type:Number
+    },
     nickname:{
       type:String
     },
@@ -33,9 +39,15 @@ Component({
       type: Number,
       value: 0
     },
+    comments:{
+      type: Number,
+      value:0
+    },
     comment: {
-      type: String,
-      value: ''
+      type: Object,
+      observer: function (newVal, oldVal) {
+        console.log(newVal)
+      }
     },
     haveimg:{
       type:Number,
@@ -125,12 +137,15 @@ Component({
       var postdata = {
         classify : this.data.classify,
         content: this.data.content,
-        comment: this.data.comment,
+        comments: this.data.comments,
         likes: this.data.likes,
         haveimg: this.data.haveimg,
         imgurl: this.data.imgurl,
         time: this.data.showtime,
-        nickname: this.data.nickname
+        nickname: this.data.nickname,
+        infoid: this.data.infoid,
+        comment: this.data.comment,
+        avatarurl: this.data.avatarurl
       }
       wx.setStorage({
         key: 'infodetail',

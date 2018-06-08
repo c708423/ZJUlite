@@ -1,0 +1,8 @@
+<!--component/msginput/msginput.wxml-->
+<view class= 'msg-wrap' catchtap='dosomething'>
+  <view class='img-icon'>
+  </view>
+  <input placeholder='{{placeoholdertext}}' class='msg-input' confirm-type='send' bindconfirm='postcomment' bindinput = 'contentchange'/>
+  <view class='msg-submit' style='height:84rpx;width:84rpx;' catchtap='postcomment'>
+  </view>
+</view>

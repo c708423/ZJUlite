@@ -11,7 +11,8 @@
   margin-top:15rpx;
   font-family: PingFangSC-Light, sans-serif;
   margin-bottom:45rpx;
-  box-shadow: 0rpx 0rpx 1rpx 1rpx rgba(0,0,1,0.09);
+  box-shadow:-10rpx 8rpx 65rpx 0rpx rgba(230,230,230,0.5);
+
   padding-top:24rpx;
   padding-bottom:0rpx;
 }
@@ -95,6 +96,8 @@
 .card-time{
   color:#9A9898;
   font-size:10pt;
+  margin-bottom:10rpx;
+
 }
 .cardbar{
   margin-top:30rpx;
@@ -110,7 +113,7 @@ right:20rpx;
 }
 .comment-brief{
   background-color:#F3F3F3;
-  padding-top:10rpx;
+  padding-top:30rpx;
   padding-bottom:5rpx;
 }
 .comment-msg{

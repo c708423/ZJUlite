@@ -1,0 +1,33 @@
+/* component/msginput/msginput.wxss */
+.msg-wrap{
+    width:100%;
+    position:fixed;
+    bottom:0rpx;
+    left:0rpx;
+    border-radius: 44rpx;
+    height:88rpx;
+      box-shadow:-10rpx 8rpx 65rpx 0rpx rgba(230,230,230,0.5);
+    background-color:white;
+    display:flex;
+    align-items: center;
+}
+.msg-submit{
+    background-color:#00C8A8;
+
+    border-radius: 50%;
+    right:3rpx;
+    display:inline-block;
+    position:absolute;
+    
+}
+.msg-input{
+  display:inline-block;
+  margin-left:10rpx;
+  width:500rpx;
+  height:100%;
+}
+.img-icon{
+  display:inline-block;
+  width:80rpx;
+  height:80rpx;
+}

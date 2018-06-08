@@ -34,7 +34,7 @@
           <image src="/asset/icon/comment.png" />
         </view>
         <span>
-          {{comment}}
+          {{comments}}
         </span>
       </view>
 
