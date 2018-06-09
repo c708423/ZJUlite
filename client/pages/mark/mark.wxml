@@ -1,0 +1,4 @@
+<!--pages/mark/mark.wxml-->
+<view class='container'>
+      <contentcard bind:changelike="changelike" wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" logged="{{logged}}" content="{{item.content}}" likes="{{item.marks}}" comment="{{item.comments}}" haveimg="{{item.haveimg}}" infoid="{{item.id}}" imgurl = "{{item.imgurl}}" nickname="{{item.nickname}}" bookmarknow="{{1}}"> </contentcard>
+</view>

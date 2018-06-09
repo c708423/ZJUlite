@@ -48,6 +48,7 @@
     </view>
   </view>
   <view class = 'comment-brief {{commentstatus == 0 ? "hidden": ""}}'>
+  <image src="/asset/icon/triangle.png" ></image>
     <view class='comment-msg'>wwwwwww:   1237894123789471239</view>
         <view class='comment-msg'>wwwwwww:   1237894123789471239</view>
             <view class='comment-msg'>wwwwwww:   1237894123789471239</view>

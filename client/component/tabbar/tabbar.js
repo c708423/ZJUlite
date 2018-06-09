@@ -29,7 +29,10 @@ Component({
    */
 
   properties: {
-
+    animationData: {
+      type:Object,
+      value:{}
+    }
   },
 
   /**
@@ -37,7 +40,7 @@ Component({
    */
   data: {
     ishide:0,
-    animationData: {},
+    
     title : {
       'home':'新鲜事',
       'talk':'我的消息',
@@ -72,21 +75,21 @@ Component({
         title: that.data.title[e.currentTarget.id]//页面标题为路由参数
       })
     },
-    hidetab: function(){
-      console.log("i am hiding")
-      animation.bottom('-110rpx').step();
-      this.setData({
-        animationData: animation.export(),
-        ishide:1
-      });
-    },
-    showtab:function(){
-      console.log("i am showing")
-      animation.bottom(0).step();
-      this.setData({
-        animationData: animation.export(),
-        ishide:0
-      });
-    }
+    // hidetab: function(){
+    //   console.log("i am hiding")
+    //   animation.bottom('-110rpx').step();
+    //   this.setData({
+    //     animationData: animation.export(),
+    //     ishide:1
+    //   });
+    // },
+    // showtab:function(){
+    //   console.log("i am showing")
+    //   animation.bottom(0).step();
+    //   this.setData({
+    //     animationData: animation.export(),
+    //     ishide:0
+    //   });
+    // }
   }
 })

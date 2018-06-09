@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    logged:{
+      type:Boolean,
+      value:false
+    }
   },
 
   /**
@@ -19,12 +22,13 @@ Component({
    */
   methods: {
     tapevent:function(){
+      var that=this
       //console.log("aa");
       this.setData({
         iconleft:80
       })
       wx.navigateTo({
-        url: '../search/search',
+        url: '../search/search?logged='+that.data.logged,
       })
       //this.triggerEvent('searchStatusChange')
     },

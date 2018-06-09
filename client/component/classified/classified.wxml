@@ -10,7 +10,7 @@
   </view>
   <view bindtap='change_type' class="class-item {{selecttype[2] ? 'select-item' : ''}}" id='classy2'>
     <image src="/asset/icon/Bag-Present.png"></image>
-    <span>箱包服饰</span>
+    <span>全部信息</span>
   </view>
   <view bindtap='change_type' class="class-item {{selecttype[3] ? 'select-item' : ''}}" id='classy3'>
     <image src="/asset/icon/Checklist.png"></image>

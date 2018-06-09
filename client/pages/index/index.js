@@ -3,9 +3,13 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
-
+var that=this
 Page({
   data: {
+    anmiationstatus:0,
+    animationData:{},
+    startPointY:0,
+    distance:0,
     contentcard:[],
     lastid:0,
     allinfoget:0,
@@ -16,8 +20,6 @@ Page({
       { id: 'msgbox5', title: 'Qc3', content: 'si4234fdssdsil'}
     ],
     tip_msg : "最近消息",
-    motto: 'Hello World',
-    userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     showView:{
@@ -30,7 +32,130 @@ Page({
     pullstatus:1,
     searchstatus:0,
     logged:false,
+    currentclassify: '全部信息',
+    classylist: {
+      'classy0': '学业疑难',
+      "classy1": '仙女集市',
+      'classy2': '全部信息',
+      'classy3': '失物招领',
+      'classy4': '出国保研',
+      'classy5': '出行玩乐',
+      'classy6': '寻人征友',
+      'classy7': '畅所欲言',
+    },
     userInfo:{}
+  },
+  gotosetting:function(){
+    if(this.data.logged){
+      wx.navigateTo({
+        url: '../setting/setting',
+      })
+    }else{
+      util.showModel('Fail', '请您在登录后使用');
+    }
+  },
+  gotomarks:function(){
+    var logged=this.data.logged
+    if(logged){
+      wx.navigateTo({
+        url: '../mark/mark?logged=' + logged,
+      })
+    }else{
+      util.showModel('Fail', '请您在登录后使用');
+    }
+    
+  },
+  classifychange: function (e) {
+    console.log(e.detail.id)
+    var that = this
+    var curclassy = e.detail.id
+    this.setData({
+      currentclassify: curclassy,
+      allinfoget: 0
+    })
+    wx.request({
+      url: config.service.hosturl + "getinfo",
+      data: {
+        lastid: 0,
+        classify: that.data.classylist[curclassy]
+      },
+      method: 'GET',
+      success: function (res) {
+        that.setData({ contentcard: res.data.data })
+        if (res.data.data.length) {
+          that.setData({ lastid: res.data.data[res.data.data.length - 1].id })
+        } else {
+          that.setData({ allinfoget: 1 })
+        }
+        console.log(that.data.lastid)
+      }
+    })
+  },
+  mytouchstart:function(e){
+    this.setData({
+      startPointY : e.touches[0].pageY
+    })
+  },
+  mytouchmove:function(e){
+    var curPointY = e.touches[0].pageY
+    var startPointY = this.data.startPointY
+    var anmiationstatus = this.data.anmiationstatus
+    if (startPointY - curPointY >= 15 && anmiationstatus===0) {
+      console.log("move down")
+      this.setData({
+        anmiationstatus:1
+      })
+      this.hidetab()
+    } else if (curPointY - startPointY >= 15 && anmiationstatus === 0) {
+      console.log("move up")
+      this.setData({
+        anmiationstatus: 1
+      })
+      this.showtab()
+    }
+  },
+  // mytouchend:function(e){
+  //   console.log("滑动结束")
+  // },
+  hidetab: function () {
+    var animation = wx.createAnimation({
+      // 动画持续时间，单位ms，默认值 400
+      duration: 500,
+      timingFunction: 'ease',
+      // 延迟多长时间开始
+      delay: 10,
+      transformOrigin: 'center bottom ',
+      success: function (res) {
+        that.setData({
+          anmiationstatus: 0
+        })
+      }
+    })
+    animation.bottom('-110rpx').step();
+    this.setData({
+      animationData: animation.export(),
+      anmiationstatus: 0
+    });
+  },
+  showtab: function () {
+    var animation = wx.createAnimation({
+      // 动画持续时间，单位ms，默认值 400
+      duration: 500,
+      timingFunction: 'ease',
+      // 延迟多长时间开始
+      delay: 10,
+      transformOrigin: 'center bottom ',
+      success: function (res) {
+        that.setData({
+          anmiationstatus: 0
+        })
+      }
+    })
+    animation.bottom(0).step();
+    this.setData({
+      animationData: animation.export(),
+      anmiationstatus: 0
+    });
   },
   cancelWhitepoint:function(e){
     if (this.data.sendmsg_state == 1) this.setData({sendmsg_state:0});

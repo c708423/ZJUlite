@@ -1,11 +1,17 @@
 // component/contentcard/contentcard.js
 var that=this;
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+var config = require('../../config')
 var util = require('../../utils/util.js')
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
+    infoid:{
+      type:Number,
+      value:0
+    },
     nickname:{
       type:String
     },
@@ -44,6 +50,14 @@ Component({
     imgurl:{
       type:String,
       value:''
+    },
+    logged:{
+      type:Boolean,
+      value:false
+    },
+    bookmarknow:{
+      type:Number,
+      value:0
     }
   },
 
@@ -58,7 +72,6 @@ Component({
       heartnow:0,
       commentnow:0,
       hiddennow:0,
-      bookmarknow:0,
       commentstatus:0
   },
 
@@ -116,9 +129,40 @@ Component({
     },
     clickbookmark: function(e){
       var bookmark = this.data.bookmarknow
-      bookmark += 1;
-      bookmark %= 2;
-      this.setData({bookmarknow:bookmark})
+      var userinfo = qcloud.getSession()
+      var infoid = this.data.infoid
+      if(this.data.logged){
+        bookmark += 1;
+        bookmark %= 2;
+        this.setData({ bookmarknow: bookmark })
+        if(bookmark===1){
+          qcloud.request({
+            url: config.service.hosturl + 'mark/add',
+            method: "post",
+            data: {
+              userid: userinfo.userinfo.openId,
+              infoid: infoid
+            },
+            success(res) {
+              console.log(res);
+            }
+          })
+        }else{
+          qcloud.request({
+            url: config.service.hosturl + 'mark/delete',
+            method: "post",
+            data: {
+              userid: userinfo.userinfo.openId,
+              infoid: infoid
+            },
+            success(res) {
+              console.log(res);
+            }
+          })
+        }
+      }else{
+        util.showModel('收藏失败', '您还未登录，请至个人中心登录后使用')
+      }
     },
     opendetail: function(e){
       console.log(e);

@@ -1,10 +1,10 @@
 <!--component/tabbar/tabbar.wxml-->
 <view>
-<view class="arrow" bindtap="{{ishide == 1 ? 'showtab' : 'hidetab' }}">
+<!-- <view class="arrow" bindtap="{{ishide == 1 ? 'showtab' : 'hidetab' }}">
   <view>
     <image src = "{{ishide == 0 ? '/asset/icon/arrow-down.png':'/asset/icon/arrow-up.png'}}"></image>
   </view>
-</view>
+</view> -->
 <view class='wrap_bar' animation="{{animationData}}">
   <view id='home' class = 'bar-button' bindtap = "select_bar">
     <image src = "{{blue_one['home'] == 1 ? '/asset/icon/blue-home.png':'/asset/icon/home.png'}}"></image>

@@ -1,21 +1,36 @@
-// pages/register/register.js
+// pages/mark/mark.js
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
-
+var util = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    contentcard: [],
+    logged:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    var userinfo = qcloud.getSession()
+    this.setData({
+      logged:options.logged
+    })
+    wx.request({
+      url: config.service.hosturl + 'mark/get',
+      method: "post",
+      data: {
+        userid: userinfo.userinfo.openId
+      },
+      success:function(res) {
+        that.setData({ contentcard: res.data.data })
+      }
+    })
   },
 
   /**
@@ -65,36 +80,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  formSubmit:function(e){
-    //console.log(e.detail.value.email)
-    //console.log(qcloud.getSession());
-    var userinfo = qcloud.getSession()
-    console.log(userinfo.userinfo.openId)
-    qcloud.request({
-      url: config.service.hosturl + 'register',
-      method: "post",
-      data: {
-        openid: userinfo.userinfo.openId,
-        email: e.detail.value.email
-      },
-      success(res) {
-        console.log(res);
-      }
-    })
-    wx.showToast({
-      title: '发送成功',
-      icon: 'success',
-      duration: 2000,
-      success:function(){
-        setTimeout(function () {
-          wx.navigateBack({
-            delta: 1
-          })
-        }, 2000) 
-      }
-    })
-    
   }
 })

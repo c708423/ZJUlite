@@ -1,21 +1,23 @@
-// pages/register/register.js
+// pages/setting/setting.js
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    userinfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var userinfo = qcloud.getSession()
+    this.setData({
+      userinfo:userinfo.userinfo
+    })
   },
 
   /**
@@ -65,36 +67,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  formSubmit:function(e){
-    //console.log(e.detail.value.email)
-    //console.log(qcloud.getSession());
-    var userinfo = qcloud.getSession()
-    console.log(userinfo.userinfo.openId)
-    qcloud.request({
-      url: config.service.hosturl + 'register',
-      method: "post",
-      data: {
-        openid: userinfo.userinfo.openId,
-        email: e.detail.value.email
-      },
-      success(res) {
-        console.log(res);
-      }
-    })
-    wx.showToast({
-      title: '发送成功',
-      icon: 'success',
-      duration: 2000,
-      success:function(){
-        setTimeout(function () {
-          wx.navigateBack({
-            delta: 1
-          })
-        }, 2000) 
-      }
-    })
-    
   }
 })

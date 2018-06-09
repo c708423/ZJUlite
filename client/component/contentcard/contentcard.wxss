@@ -112,6 +112,16 @@ right:20rpx;
   background-color:#F3F3F3;
   padding-top:10rpx;
   padding-bottom:5rpx;
+  position: relative;
+}
+.comment-brief image{
+  width: 70rpx;
+  position: absolute;
+  top:-35rpx;
+  height: 70rpx;
+  left:48%;
+  right:52%;
+  z-index: 99
 }
 .comment-msg{
     margin-left:40rpx;
