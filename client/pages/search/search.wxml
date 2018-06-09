@@ -4,12 +4,18 @@
     <view class='backgroundcolor'></view>
     <view class='searchwrapper'>
       <icon type="search" size="12" class='searchicon' ></icon>
-      <input class = 'searchbox' placeholder='搜索' placeholder-class='placeholder-text'>
+      <input class = 'searchbox' placeholder='搜索' placeholder-class='placeholder-text' bindfocus='getfocus' focus="{{focus}}" confirm-type="search" bindconfirm='gotosearch' bindinput='bindKeyInput'>
       </input>
-      <view class='searchbutton'>搜一搜</view>
+      <view class='searchbutton' bindtap='tapsearch'>搜一搜</view>
     </view>
-    <view class='tagtext'>请选择一个标签</view>
-    <classified bind:classifychagne='classifychagne'></classified>
-    <searchpicker></searchpicker>
+    <view class=" {{issearching===1?'':'displaynone'}}">
+    <view class="tagtext">请选择一个标签</view>
+    <classified bind:classifychange="classifychange"></classified>
+    <searchpicker bind:changestatus="changestatus"></searchpicker>
+    </view>
+  </view>
+  <view style='margin-top:100rpx;'>
+  <contentcard bind:changelike="changelike" wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" logged="{{logged}}" content="{{item.content}}" likes="{{item.marks}}" comment="{{item.comments}}" haveimg="{{item.haveimg}}" infoid="{{item.id}}" imgurl = "{{item.imgurl}}" nickname="{{item.nickname}}"> </contentcard>
+<view style='margin-top:250rpx;width:100%;text-align:center;font-size:25rpx;color:#666;' class="{{issearching===0?'':'displaynone'}}">——没有更多结果了哦——</view>
   </view>
 </view>

@@ -8,6 +8,10 @@ Component({
       type: String,
       valie:''
     },
+    regstatus:{
+      type:String,
+      value:''
+    },
     avaurl: {
       type: String,
       value: '/asset/icon/1.jpg',
@@ -40,7 +44,8 @@ Component({
    */
   methods: {
     register: function () {
-      if (this.data.logged) {
+      console.log(this.data.regstatus)
+      if (this.data.logged && this.data.regstatus!='激活成功') {
         wx.navigateTo({
           url: '../register/register'
         })

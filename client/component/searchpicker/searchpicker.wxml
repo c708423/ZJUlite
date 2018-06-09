@@ -8,27 +8,27 @@
 </view>
 <view class='timepickerbox'>
   <view class="memo {{pickmode===1 ? 'memopick':''}}" bindtap='beforetap'>以前</view>
-  <picker-view indicator-style="height: 50px;"  style="width: 100%; height: 200px;" value="{{value}}" class="{{pickmode===1||pickmode===2 ? '':'displaynone'}}" bindchange="beforebindChange">
+  <picker-view indicator-style="height: 50px;"  style="width: 100%; height: 200px;" value="{{[year,month,day-2]}}" class="{{pickmode===1||pickmode===2 ? '':'displaynone'}}" bindchange="beforebindChange">
     <picker-view-column>
-      <view wx:for="{{years}}" style="line-height: 50px;text-align:center;">{{item}}</view>
+      <view wx:for="{{years}}" wx:key="*this" style="line-height: 50px;text-align:center;">{{item}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{months}}" style="line-height: 50px;text-align:center;">{{item}}</view>
+      <view wx:for="{{months}}" wx:key="*this" style="line-height: 50px;text-align:center;">{{item}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{days}}" style="line-height: 50px;text-align:center;">{{item}}</view>
+      <view wx:for="{{days}}" wx:key="*this" style="line-height: 50px;text-align:center;">{{item}}</view>
     </picker-view-column>
   </picker-view>
   <view class="memo {{pickmode===2 ? 'memopick':''}}" bindtap='totap'> 到</view>
-  <picker-view indicator-style="height: 50px;"style="width: 100%; height: 180px;" value="{{value}}" class="{{pickmode===3||pickmode===2 ? '':'displaynone'}}" bindchange="tobindChange">
+  <picker-view indicator-style="height: 50px;"style="width: 100%; height: 180px;" value="{{[year,month,day-1]}}" class="{{pickmode===3||pickmode===2 ? '':'displaynone'}}" bindchange="tobindChange">
     <picker-view-column>
-      <view wx:for="{{years}}" style="line-height: 50px;text-align:center;">{{item}}</view>
+      <view wx:for="{{years}}" wx:key="*this" style="line-height: 50px;text-align:center;">{{item}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{months}}" style="line-height: 50px;text-align:center;">{{item}}</view>
+      <view wx:for="{{months}}" wx:key="*this" style="line-height: 50px;text-align:center;">{{item}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{days}}" style="line-height: 50px;text-align:center;">{{item}}</view>
+      <view wx:for="{{days}}" wx:key="*this" style="line-height: 50px;text-align:center;">{{item}}</view>
     </picker-view-column>
   </picker-view>
   <view class="memo {{pickmode===3 ? 'memopick':''}}" bindtap='aftertap'>以后</view>

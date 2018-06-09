@@ -1,0 +1,11 @@
+/* pages/mark/mark.wxss */
+.container{
+  padding-top: 30rpx;
+  padding-left:25.93rpx;
+  padding-right:25.93rpx;
+  overflow-x:hidden;
+}
+image{
+  width:100%;
+  height:100%;
+}

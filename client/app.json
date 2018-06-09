@@ -6,7 +6,10 @@
     "pages/register/register",
     "pages/search/search",
     "pages/detailinfo/detailinfo",
-    "pages/chat/chat"
+    "pages/chat/chat",
+    "pages/mark/mark",
+    "pages/setting/setting"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
