@@ -1,1 +1,8 @@
-{}
+{
+    "usingComponents": {
+      "msginput": "../../component/msginput/msginput"
+    },
+    "backgroundColorTop": "#8DDAD5",
+    "backgroundColorBottom": "#FCFAFA",
+    "navigationBarBackgroundColor": "#8DDAD5"
+}

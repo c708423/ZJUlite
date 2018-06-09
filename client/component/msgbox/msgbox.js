@@ -48,6 +48,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    openchat:false,
     del_state:0,
     new_msgnum:1,
     touchstartx:0,
@@ -77,10 +78,14 @@ Component({
       this.setData({del_state : 1});
     },
     delstart: function(e){
+      this.setData({
+        openchat: true
+      })
         this.setData({offsetX:0});
         this.setData({touchstartx:e.touches[0].clientX,touchstarty:e.touches[0].clientY});
     },
     delend: function(e){
+
       if (this.data.offsetX > DEL_MOVEOFFSET){
         animation.left('-' + DEL_WIDTH + 'rpx').step();
         this.setData({
@@ -101,6 +106,7 @@ Component({
       }
     },
     delmove: function(e){
+      this.setData({openchat:false})
       this.setData({ touchnowx: e.touches[0].clientX, touchnowy: e.touches[0].clientY });
       if (e.touches[0].clientX > this.data.touchstartx) {
         this.setData({ touchstartx: e.touches[0].clientX});
@@ -116,8 +122,17 @@ Component({
         animationData: animation.export()
       });
     },
-    openchat: function(e){
-      console.log(1)
+    openit: function(e){
+      console.log('in open end', this.data.openchat)
+      if (this.data.openchat) {
+          wx.navigateTo({
+            url: '../chat/chat',
+          })
+          this.setData({openchat:false})
+      }
+    },
+    bindok: function(e){
+      console.log('ok')
     }
   }
 })

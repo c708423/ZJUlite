@@ -1,5 +1,5 @@
 <!--component/msgbox/msgbox.wxml-->
-<view animation="{{animationData}}" class='msgbox-class' style="left:-{{offsetX}}rpx;" bindtouchstart='realdel' bindtap="openchat">
+<view animation="{{animationData}}" class='msgbox-class' style="left:-{{offsetX}}rpx;" bindtouchstart='realdel' bindtouchend='openit'>
   <view class='msgbox-main' bind:touchstart='delstart' bind:touchmove='delmove' bind:touchend='delend'>
     <view class='msg-head'>
       <view class='head-img'>

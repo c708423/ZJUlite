@@ -1,2 +1,30 @@
 <!--pages/chat/chat.wxml-->
-<text>pages/chat/chat.wxml</text>
+<view>
+  <view class='backgroundcolor'>
+    <view class='user-head'>
+      <view class='headimg-wrap'>
+        <image src="{{avaurl}}">
+        </image>
+      </view>
+      <view class='nickname'>
+        nickname
+      </view>
+    </view>
+  </view>
+  <view class='chatcontent'>
+    <view class='graytime'>
+    01 Aug 2018
+    </view>
+    <view class='rightmsg'>
+    <view>
+    环境健康健康不健康
+    </view>
+    </view>
+    <view class='leftmsg'>
+    <view>
+    ojbk
+    </view>
+    </view>
+  </view>
+  <msginput></msginput>
+</view>
