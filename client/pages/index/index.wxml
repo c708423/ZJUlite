@@ -28,7 +28,7 @@
     </view>
   </view>
   <view id='talk' class="{{showView['talk'] ? '':'viewhidden'}}" catch:touchstart='allgoback'>
-    <msgbox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox" bindtap="openchat"></msgbox>
+    <msgbox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox" ></msgbox>
 
 
     <view class="{{pullstatus ? '':'viewhidden'}}">

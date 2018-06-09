@@ -115,6 +115,9 @@ Component({
       this.setData({
         animationData: animation.export()
       });
+    },
+    openchat: function(e){
+      console.log(1)
     }
   }
 })
