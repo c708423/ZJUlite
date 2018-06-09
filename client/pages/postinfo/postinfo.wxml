@@ -2,7 +2,7 @@
 <view class="home-container">
   <view id='home'>
     <view class='backgroundcolor'></view>
-    <classified bind:classifychagne='classifychagne'></classified>
+    <classified bind:classifychange='classifychagne'></classified>
     <view class='contentbox'>
       <view class='tag_text'>
         <view class='classified-tag'>

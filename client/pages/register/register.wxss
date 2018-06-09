@@ -4,7 +4,6 @@
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
-  height: 500rpx;
   align-items: center;
 }
 .memotext{
@@ -21,7 +20,59 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  box-shadow: 0rpx 0rpx 1rpx 1rpx rgba(0,0,1,0.09);
 }
 .mainbox button{
   width:100%;
+}
+.background{
+  background: #00CDAC;
+  height:280rpx;
+  position: fixed;
+  top:0rpx;
+  left:0rpx;
+  right:0rpx;
+  z-index:-999; 
+}
+.littlebox{
+  margin-top: 30rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  height: 140rpx;
+  width: 85%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.littlebox .boxtitle{
+  font-size: 25rpx;
+  color: #666;
+  letter-spacing: 2rpx;
+}
+.littlebox .boxcontent{
+  font-size: 35rpx;
+  color: #000;
+  letter-spacing: 2rpx;
+}
+.littlebox .boxcontent2{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#submit{
+  margin-top: 50rpx;
+  width:400rpx;
+  height:84rpx;
+  border-radius: 42rpx;
+  background:linear-gradient(90deg, #2C56FF , #24F6AE);
+  color:#FEFEFE;
+  font-size:30rpx;
+  box-shadow:0rpx 15rpx 43rpx 10rpx rgba(6,0,1,0.28);
 }
