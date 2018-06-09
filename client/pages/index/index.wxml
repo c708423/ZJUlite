@@ -65,14 +65,6 @@
       </view>
     </view>
     <label class='usertip'>更多设置</label>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">
-          <view style="display: inline-block; vertical-align: middle">我的收藏</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </view>
-    </view>
     <view class='blank-br'></view>
     <view class="weui-cells weui-cells_after-title" bindtap='gotosetting'>
       <view class="weui-cell weui-cell_access">

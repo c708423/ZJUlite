@@ -14,7 +14,7 @@
   </view>
 
   <view class='brief-img {{haveimg == 1 ? "":"hidden"}}'>
-  <image src="{{imgurl}}" mode="aspectFit"/>
+  <image src="{{imgurl}}"/>
   </view>
   <view class='cardbar'>
     <view class='card-time'>

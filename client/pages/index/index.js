@@ -43,6 +43,7 @@ Page({
       'classy6': '寻人征友',
       'classy7': '畅所欲言',
     },
+    //upordown:0, //0表示向下，1表示向上
     userInfo:{}
   },
   gotosetting:function(){
@@ -97,6 +98,7 @@ Page({
     })
   },
   mytouchmove:function(e){
+    if (this.data.showView['home']===0){return}
     var curPointY = e.touches[0].pageY
     var startPointY = this.data.startPointY
     var anmiationstatus = this.data.anmiationstatus
@@ -246,7 +248,7 @@ Page({
       setTimeout(function(){
         wx.stopPullDownRefresh()
         that.onLoad()
-        this.setData({pullstatus:1})
+        that.setData({pullstatus:1})
       },1000)
   },
   allgoback: function(){
@@ -295,32 +297,15 @@ Page({
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {
           // 检查登录是否过期
-          wx.checkSession({
-            success: function () {
-              // 登录态未过期
-              qcloud.clearSession();
-              // 登录态已过期，需重新登录
-              console.log('wxsession 未过期');
-              var options = {
-                encryptedData: e.detail.encryptedData,
-                iv: e.detail.iv,
-                userInfo: userInfo
-              }
-              that.doLogin(options);
-            },
-
-            fail: function () {
-              qcloud.clearSession();
-              // 登录态已过期，需重新登录
-              console.log('wxsession 已过期');
-              var options = {
-                encryptedData: e.detail.encryptedData,
-                iv: e.detail.iv,
-                userInfo: userInfo
-              }
-              that.doLogin(options);
-            },
-          });
+          qcloud.clearSession();
+          // 登录态已过期，需重新登录
+          console.log('wxsession 未过期');
+          var options = {
+            encryptedData: e.detail.encryptedData,
+            iv: e.detail.iv,
+            userInfo: userInfo
+          }
+          that.doLogin(options);
         } else {
           util.showModel('用户未授权', e.detail.errMsg);
         }
@@ -352,6 +337,7 @@ Page({
           encryptedData: options.encryptedData,
           iv: options.iv,
         }
+        console.log(loginParams)
         console.log(loginResult);
         qcloud.requestLogin({
           loginParams, success(res) {

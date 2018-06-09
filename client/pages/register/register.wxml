@@ -1,11 +1,26 @@
 <!--pages/register/register.wxml-->
 <form bindsubmit="formSubmit">
-  <view  class='mainbox'>
+  <view class='background'></view>
+  <!-- <view  class='mainbox' style='display:none;'>
     <view class='memotext'>请输入您的浙大邮箱以激活</view>
     <view class='memo'>
       <input type='text'  placeholder="input" focus="true" name="email"></input>
       <view class='addtext'>@zju.edu.cn</view>
     </view>
     <button type="primary"  form-type='submit'> 发送激活邮件 </button>
+  </view> -->
+  <view class='mainbox'>
+    <view class='littlebox'>
+      <view class='boxtitle'>你的名字</view>
+      <view class='boxcontent'>{{userinfo.nickName}}</view>
+    </view>
+    <view class='littlebox'>
+      <view class='boxtitle'>浙大邮箱</view>
+      <view class='boxcontent2'>
+        <input type='text'  placeholder="请输入" focus="true" name="email"></input>
+      <view class='addtext'>@zju.edu.cn</view>
+      </view>
+    </view>
+    <button  id='submit' form-type='submit'>发送邮件</button>
   </view>
 </form>

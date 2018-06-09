@@ -16,9 +16,17 @@
   padding-bottom:0rpx;
 }
 .brief-img{
+  margin-top: 30rpx;
   width:100%;
-  height:300rpx;
+  max-height:750rpx;
   background-color:#FCFAFA;
+  position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+.brief-img image{
+  width: 100%;
+    position: absolute;
 }
 .hidden{
   display:none;
