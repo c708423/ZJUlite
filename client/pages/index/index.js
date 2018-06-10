@@ -68,7 +68,6 @@ Page({
     
   },
   classifychange: function (e) {
-    console.log(e.detail.id)
     var that = this
     var curclassy = e.detail.id
     this.setData({
@@ -89,7 +88,6 @@ Page({
         } else {
           that.setData({ allinfoget: 1 })
         }
-        console.log(that.data.lastid)
       }
     })
   },
@@ -104,22 +102,17 @@ Page({
     var startPointY = this.data.startPointY
     var anmiationstatus = this.data.anmiationstatus
     if (startPointY - curPointY >= 15 && anmiationstatus===0) {
-      console.log("move down")
       this.setData({
         anmiationstatus:1
       })
       this.hidetab()
     } else if (curPointY - startPointY >= 15 && anmiationstatus === 0) {
-      console.log("move up")
       this.setData({
         anmiationstatus: 1
       })
       this.showtab()
     }
   },
-  // mytouchend:function(e){
-  //   console.log("滑动结束")
-  // },
   hidetab: function () {
     var animation = wx.createAnimation({
       // 动画持续时间，单位ms，默认值 400
@@ -186,13 +179,11 @@ Page({
     this.setData({
       showView : stateHome
     });
-    console.log(this.data.showView);
   },
   del_talkbox:function (e){
     console.log(e);
     var newtalkcard = this.data.talkcard,i;
     for (i=0;i<=newtalkcard.length;i++){
-      console.log(this.data.talkcard[i].id);
       if (newtalkcard[i].id == e.detail.id) {
         newtalkcard.splice(i,1);
         break;
@@ -214,7 +205,6 @@ Page({
     }
   },
   onReachBottom : function(){
-      console.log('onReachBottom');
       if (this.data.allinfoget == 1) return;
       var that = this;
       setTimeout(function(){
@@ -233,7 +223,6 @@ Page({
             var tmpcontent = that.data.contentcard;
             tmpcontent = tmpcontent.concat(res.data.data);
             that.setData({contentcard: tmpcontent})
-            console.log(tmpcontent)
           }
         })
         that.setData({ contentcard: that.data.contentcard });
@@ -254,22 +243,30 @@ Page({
   },
   allgoback: function(){
     var that = this;
-    console.log('all go back happen');
     this.data.talkcard.forEach(function(value,index,arr){
       that.selectComponent('#' + value.id).goback();
     });
   },
   pushnewinfo:function(){
-    console.log(this.data.userInfo.ZJUpass)
-    if (this.data.userInfo.ZJUpass == 0 || typeof this.data.userInfo.ZJUpass === 'undefined') return; 
-    wx.navigateTo({
-      url: '../postinfo/postinfo'
-    })
+    if (this.data.regstatus != '激活成功' || typeof this.data.regstatus === 'undefined') 
+    {
+      util.showModel('fail','请先登录')
+      return; 
+    }else{
+      wx.navigateTo({
+        url: '../postinfo/postinfo'
+      })
+    }
   },
   pushnewitem:function(){
-    wx.navigateTo({
-      url: '../postinfo/postinfo?id=classy1'
-    })
+    if (this.data.regstatus != '激活成功' || typeof this.data.regstatus === 'undefined') {
+      util.showModel('fail', '请先登录')
+      return;
+    } else {
+      wx.navigateTo({
+        url: '../postinfo/postinfo?id=classy1'
+      })
+    }
   },
   // searchStatusChange: function(){
   //   var that = this
@@ -309,9 +306,16 @@ Page({
           },
           method: 'post',
           success: function (res) {
+            var userInfo = that.data.userInfo
+            userInfo.nickName = res.data.data[0].nickname
+            userInfo.avatarUrl = res.data.data[0].avatarurl
             that.setData({
-              regstatus:res.data.data[0].status
+              regstatus:res.data.data[0].status,
+              userInfo: userInfo
             })
+            var session = qcloud.getSession()
+            session.userinfo=userInfo
+            qcloud.setsession(session)
           }
         })
       },

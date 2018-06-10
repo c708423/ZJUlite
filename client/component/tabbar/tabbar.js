@@ -70,26 +70,9 @@ Component({
       };
       newblue_one[e.currentTarget.id] = 1;
       this.setData({blue_one:newblue_one});
-      console.log(this.data.title[e.currentTarget.id]);
       wx.setNavigationBarTitle({
         title: that.data.title[e.currentTarget.id]//页面标题为路由参数
       })
     },
-    // hidetab: function(){
-    //   console.log("i am hiding")
-    //   animation.bottom('-110rpx').step();
-    //   this.setData({
-    //     animationData: animation.export(),
-    //     ishide:1
-    //   });
-    // },
-    // showtab:function(){
-    //   console.log("i am showing")
-    //   animation.bottom(0).step();
-    //   this.setData({
-    //     animationData: animation.export(),
-    //     ishide:0
-    //   });
-    // }
   }
 })

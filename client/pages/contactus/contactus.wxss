@@ -1,0 +1,58 @@
+/* pages/contactus/contactus.wxss */
+.container{
+  padding-left: 23rpx;
+  padding-right: 23rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: PingFangSC-Light, sans-serif;
+}
+.backgroundcolor{
+    background: linear-gradient(180deg, #00CDAC , #8DDAD5);
+    height:280rpx;
+    position: fixed;
+    top:0rpx;
+    left:0rpx;
+    right:0rpx;
+    z-index:-999;
+}
+.photo{
+  height:180rpx;
+  width:180rpx;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0rpx 0rpx 1rpx 5rpx rgba(0,0,1,0.03); 
+  border-radius: 20rpx;
+  font-family: PingFangSC-Light, sans-serif;
+}
+.photo image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.mainmemo{
+  font-size: 40rpx;
+  color: #000;
+  margin-top:  30rpx;
+}
+.ccmemo{
+  font-size: 30rpx;
+  color: #666;
+  margin-top:  30rpx;
+}
+.developers{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30rpx;
+  height: 300rpx;
+  margin-top:  30rpx;
+}

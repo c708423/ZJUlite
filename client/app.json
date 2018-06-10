@@ -8,8 +8,9 @@
     "pages/detailinfo/detailinfo",
     "pages/chat/chat",
     "pages/mark/mark",
-    "pages/setting/setting"
-
+    "pages/setting/setting",
+    "pages/contactus/contactus",
+    "pages/setperson/setperson"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -22,13 +22,11 @@ Component({
   methods: {
     postcomment: function(e){
       var that = this
-      console.log('组件内点击提交')
       this.triggerEvent('postcomment',{
         data:that.data.content
       });
     },
     contentchange: function(e){
-      console.log(e)
       this.setData({content:e.detail.value})
     }
   }

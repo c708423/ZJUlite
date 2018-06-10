@@ -44,6 +44,8 @@
     margin-left:40rpx;
   margin-right:40rpx;
   color:#353535;
+  overflow:hidden;
+  padding-right: 30rpx; 
 }
 .card-title-color{
   background-color:#F77B35;

@@ -1,0 +1,44 @@
+/* pages/setperson/setperson.wxss */
+.container{
+  padding-left: 23rpx;
+  padding-right: 23rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: PingFangSC-Light, sans-serif;
+}
+.photo{
+  height:190rpx;
+  width:190rpx;
+  border-radius: 20rpx;
+  overflow: hidden
+}
+.photo image{
+  width: 100%;
+  height: 100%;
+}
+.uploader-container{
+  margin-left:30rpx;
+}
+.photobox{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nickbox{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  color: #000;
+  margin-top: 50rpx;
+}
+.submitbutton{
+  margin-top: 50rpx;
+}
