@@ -2,7 +2,9 @@
 <view class='userprofile-class' bindtap='register'>
   <view class='user-head'>
     <view class='headimg-wrap'>
-      <image src = src="{{avaurl}}">
+      <image src="/asset/icon/user-center.svg" wx:if="{{!logged}}" class='unlogginimg'>
+      </image>
+      <image src="{{avaurl}}" wx:if="{{logged}}">
       </image>
     </view>
   </view>

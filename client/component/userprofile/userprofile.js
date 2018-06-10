@@ -14,7 +14,7 @@ Component({
     },
     avaurl: {
       type: String,
-      value: '/asset/icon/1.jpg',
+      value: '/asset/icon/user-center.svg',
       observer: function (newData, oldData) {
         if (newData == '') this.setData({avaurl:oldData});
       }

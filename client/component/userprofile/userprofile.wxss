@@ -29,6 +29,9 @@ opacity:0;
   background-color:#DFDFDF;
   margin:0 auto;
   overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .user-name {
   font-size:34rpx;
@@ -48,4 +51,8 @@ opacity:0;
 }
 .rightbox{
   display: block;
+}
+.unlogginimg{
+  width:70%;
+  height:70%;
 }

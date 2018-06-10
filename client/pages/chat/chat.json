@@ -4,5 +4,6 @@
     },
     "backgroundColorTop": "#8DDAD5",
     "backgroundColorBottom": "#FCFAFA",
-    "navigationBarBackgroundColor": "#8DDAD5"
+    "navigationBarBackgroundColor": "#8DDAD5",
+    "navigationBarTitleText": ""
 }

@@ -22,8 +22,8 @@
       <view class="weui-loadmore__tips">{{allinfoget==0?'正在加载':'加载完成'}}</view>
     </view>
     <view class='send-msg'>
-      <view catchtap='pushnewitem'class='white-point {{sendmsg_state == 0?"hidden":""}}'><image src="/asset/icon/free.png"></image></view>
-      <view catchtap='pushnewinfo' class='white-point {{sendmsg_state == 0?"hidden":""}}'><image src="/asset/icon/info.png"></image></view>
+      <view catchtap='pushnewitem'class='white-point {{sendmsg_state == 0?"hidden":""}}'><image src="/asset/icon/free.svg"></image></view>
+      <view catchtap='pushnewinfo' class='white-point {{sendmsg_state == 0?"hidden":""}}'><image src="/asset/icon/info.svg"></image></view>
       <image id='pushinfo' src="/asset/icon/sendmsg.png" catchtap='send_msg'></image>
     </view>
   </view>
