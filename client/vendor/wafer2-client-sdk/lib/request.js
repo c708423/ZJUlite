@@ -73,16 +73,16 @@ function request(options) {
     // 实际进行请求的方法
     function doRequest() {
         var authHeader = buildAuthHeader(Session.get().skey);
-        console.log('request option', 
-          utils.extend( {},  options, {
-          header: utils.extend({}, originHeader, authHeader)}))
+
         wx.request(utils.extend({}, options, {
             header: utils.extend({}, originHeader, authHeader),
 
             success: function (response) {
                 var data = response.data;
+
                 var error, message;
                 if (data && data.code === -1) {
+                    Session.clear();
                     // 如果是登录态无效，并且还没重试过，会尝试登录后刷新凭据重新请求
                     if (!hasRetried) {
                         hasRetried = true;

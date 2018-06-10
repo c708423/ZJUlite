@@ -38,7 +38,7 @@
   <view id='msg' class="{{showView['new-msg'] ? '':'viewhidden'}}">
   </view>
   <view id='user' class="{{showView['user'] ? '':'viewhidden'}}">
-    <userprofile name='{{userInfo.nickname}}' avaurl='{{userInfo.avatarurl}}' logged='{{logged}}' regstatus='{{userInfo.status}}'><button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" zjupass='{{userInfo.ZJUpass}}' >点击测试登录接口</button></userprofile>
+    <userprofile name='{{userInfo.nickName}}' avaurl='{{userInfo.avatarUrl}}' logged='{{logged}}' regstatus='{{regstatus}}'><button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" zjupass='{{userInfo.ZJUpass}}' >点击测试登录接口</button></userprofile>
     <label class='usertip'>与我相关</label>
 
     <view class="weui-cells weui-cells_after-title">

@@ -12,6 +12,7 @@ Page({
     distance:0,
     contentcard:[],
     lastid:0,
+    regstatus:'',
     allinfoget:0,
     talkcard:[
       { id: 'msgbox1', title: 'Qc0', content: 'sili23i收到收到机收到收到机收到收到机收到收到机收到收到机卡士力架老师看大家阿斯顿快乐机啊3李丹空间l'},
@@ -290,25 +291,32 @@ Page({
     if (this.data.logged) return;
     util.showBusy('正在登录');
     var that = this;
-    console.log(e.detail)
-    var userInfo = e.detail.userInfo;
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 检查登录是否过期
-          qcloud.clearSession();
-          // 登录态已过期，需重新登录
-          console.log('wxsession 未过期');
-          var options = {
-            encryptedData: e.detail.encryptedData,
-            iv: e.detail.iv,
-            userInfo: userInfo
+    //console.log(config.service.loginUrl)
+    qcloud.setLoginUrl(config.service.loginUrl);
+    qcloud.login({
+      success: function (userInfo) {
+        util.showSuccess('登录成功');
+        that.setData({
+          userInfo:userInfo,
+          logged:true
+        })
+        wx.request({
+          url: config.service.hosturl + 'userlogin',
+          data: {
+            openid: userInfo.openId,
+            nickname: userInfo.nickName,
+            avatarurl: userInfo.avatarUrl
+          },
+          method: 'post',
+          success: function (res) {
+            that.setData({
+              regstatus:res.data.data[0].status
+            })
           }
-          that.doLogin(options);
-        } else {
-          util.showModel('用户未授权', e.detail.errMsg);
-        }
+        })
+      },
+      fail: function (err) {
+        console.log('登录失败', err);
       }
     });
   },
