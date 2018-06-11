@@ -48,7 +48,6 @@ Component({
     comment: {
       type: Object,
       observer: function (newVal, oldVal) {
-        console.log(newVal)
       }
     },
     haveimg:{
@@ -88,7 +87,6 @@ Component({
    */
   methods: {
     transparencyRefresh:function(event){
-        console.log(this);
     },
     clickheart: function(e){
         var heart = this.data.heartnow
@@ -97,7 +95,6 @@ Component({
         this.setData({
             heartnow:heart
         })
-        console.log(this.data)
     },
     clickhidden: function (e) {
       var hidden = this.data.hiddennow
@@ -152,7 +149,6 @@ Component({
               infoid: infoid
             },
             success(res) {
-              console.log(res);
             }
           })
         }else{
@@ -164,7 +160,6 @@ Component({
               infoid: infoid
             },
             success(res) {
-              console.log(res);
             }
           })
         }
@@ -173,7 +168,6 @@ Component({
       }
     },
     opendetail: function(e){
-      console.log(e);
       var postdata = {
         classify : this.data.classify,
         content: this.data.content,

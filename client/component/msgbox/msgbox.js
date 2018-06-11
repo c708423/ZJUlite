@@ -74,7 +74,6 @@ Component({
       else this.setData({del_state : 0});
     },
     triggerdel: function(e){
-      console.log('del');
       this.setData({del_state : 1});
     },
     delstart: function(e){
@@ -123,7 +122,6 @@ Component({
       });
     },
     openit: function(e){
-      console.log('in open end', this.data.openchat)
       if (this.data.openchat) {
           wx.navigateTo({
             url: '../chat/chat',
@@ -132,7 +130,6 @@ Component({
       }
     },
     bindok: function(e){
-      console.log('ok')
     }
   }
 })

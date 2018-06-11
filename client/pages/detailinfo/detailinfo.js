@@ -27,17 +27,14 @@ Component({
    */
   methods: {
     onLoad: function (e) {
-      console.log('ok')
       var detail = wx.getStorageSync('infodetail')
       this.setData({pageinfo:detail})
       var k = this.handle(this.data.pageinfo.comment)
-      console.log('前端处理评论',k)
       this.setData({showcomment:k});
     },
     handle:function(e){
       var ans=[];
       var temparr = new Array();
-      console.log('temparr',temparr.push(1));
       for (var key in e){
           if (e[key].level == 0) ans = ans.concat(e[key]);
       }
@@ -56,7 +53,6 @@ Component({
     },
     commsubmit: function(e) {
         var that = this
-        console.log('submit the commit of 1 level');
         qcloud.request({
           url: config.service.hosturl + 'commentpost',
           method: 'POST',
@@ -84,7 +80,6 @@ Component({
     },
     postcomment: function(e){
         var that = this
-        console.log('页面收到组件的数据',e)
         this.setData({inputstate:false})
         qcloud.request({
           url: config.service.hosturl + 'commentpost',
@@ -96,7 +91,6 @@ Component({
             belongto: that.data.belongto
           },
           success: function(res){
-              console.log(res)
           }
         })
     },
@@ -106,8 +100,7 @@ Component({
     subcommentpost: function(e){
 
       if (this.data.subcommentstate == false) return
-      console.log(e)
-      this.setData({
+        this.setData({
         commentlevel: 1,
         belongto: Number(e.currentTarget.id),
         inputstate: true,

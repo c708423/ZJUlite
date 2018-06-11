@@ -1,33 +1,18 @@
-// pages/setting/setting.js
-var qcloud = require('../../vendor/wafer2-client-sdk/index')
-var config = require('../../config')
+// pages/contactus/contactus.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userinfo:{}
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  gotoperson: function () {
-    wx.navigateTo({
-      url: '../setperson/setperson',
-    })
-  },
-  gotocontact:function(){
-     wx.navigateTo({
-       url: '../contactus/contactus',
-     })
-  },
   onLoad: function (options) {
-    var userinfo = qcloud.getSession()
-    this.setData({
-      userinfo:userinfo.userinfo
-    })
+  
   },
 
   /**

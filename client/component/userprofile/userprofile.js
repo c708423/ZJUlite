@@ -44,7 +44,6 @@ Component({
    */
   methods: {
     register: function () {
-      console.log(this.data.regstatus)
       if (this.data.logged && this.data.regstatus!='激活成功') {
         wx.navigateTo({
           url: '../register/register'

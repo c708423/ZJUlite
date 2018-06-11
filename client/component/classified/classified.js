@@ -25,7 +25,6 @@ Component({
           this.setData({
             selecttype : newarr
           })
-          console.log(this.data.selecttype);
           this.triggerEvent("classifychange",{'id':e.currentTarget.id},{});
       }
   }

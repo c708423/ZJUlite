@@ -1,0 +1,14 @@
+<!--pages/contactus/contactus.wxml-->
+<view class='container'>
+  <view class='backgroundcolor'></view>
+  <view class='photo'>
+    <image src="/asset/icon/mini.png"> </image>
+  </view>
+  <view class='mainmemo'>ZJUlite For Weixin</view>
+  <view class='ccmemo'>Version: enjoy 0.3</view>
+  <view class='developers'>
+    <view>QC</view>
+    <view>Kaikai</view>
+    <view>阿猹狸狸</view>
+  </view>
+</view>

@@ -12,6 +12,7 @@ var exports = module.exports = {
     
     clearSession: Session.clear,
     getSession: Session.get,
+    setsession:Session.set,
     request: request.request,
     RequestError: request.RequestError,
 
