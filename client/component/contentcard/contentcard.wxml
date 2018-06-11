@@ -1,4 +1,5 @@
-<!--component/contentcard/contentcard.wxml-->
+  
+      <!--component/contentcard/contentcard.wxml-->
 <view class='cardstyle' bind:transparencyRefresh="transparencyRefresh" bindtap="opendetail">
   <view class='bookmark' catchtap='clickbookmark'>
     <image src="{{bookmark[bookmarknow]}}"/>

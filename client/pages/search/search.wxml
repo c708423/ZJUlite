@@ -15,7 +15,7 @@
     </view>
   </view>
   <view style='margin-top:100rpx;'>
-  <contentcard bind:changelike="changelike" wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" logged="{{logged}}" content="{{item.content}}" likes="{{item.marks}}" comment="{{item.comments}}" haveimg="{{item.haveimg}}" infoid="{{item.id}}" imgurl = "{{item.imgurl}}" nickname="{{item.nickname}}"> </contentcard>
+  <contentcard bind:changelike="changelike" wx:for="{{contentcard}}" wx:key="id" classify="{{item.classify}}" time="{{item.createat}}" logged="{{logged}}" content="{{item.content}}" likes="{{item.marks}}" comment="{{item.comments}}" haveimg="{{item.haveimg}}" infoid="{{item.id}}" imgurl = "{{item.imgurl}}" nickname="{{item.nickname}}" avatarurl='{{item.avatarurl}}'> </contentcard>
 <view style='margin-top:250rpx;width:100%;text-align:center;font-size:25rpx;color:#666;' class="{{issearching===0?'':'displaynone'}}">——没有更多结果了哦——</view>
   </view>
 </view>

@@ -1,0 +1,25 @@
+<!--component/msgbox/msgbox.wxml-->
+<view animation="{{animationData}}" class='msgbox-class' style="left:-{{offsetX}}rpx;" bindtouchstart='realdel' bindtouchend='openit'>
+  <view class='msgbox-main' bind:touchstart='delstart' bind:touchmove='delmove' bind:touchend='delend'>
+    <view class='msg-head'>
+      <view class='head-img'>
+        <view class='red-point {{new_msgnum == 0?"hidden":""}}'>
+          <view style="display:inline-block;margin:0 auto;">{{new_msgnum}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='msgcontent'>
+      <view class='msg-title'>
+        {{title}}
+      </view>
+      <view class='msg-brief'>
+        {{content}}
+      </view>
+    </view>
+  </view>
+  <view class='msgbox-del' bindtouchstart='triggerdel'>
+    <label class='del-word'>
+      删除
+    </label>
+  </view>
+</view>

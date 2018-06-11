@@ -8,7 +8,8 @@
     "msgbox":"../../component/msgbox/msgbox",
     "bottomtip": "../../component/bottomtip/bottomtip",
     "searchpicker": "../../component/searchpicker/searchpicker",
-    "tipbox":"../../component/tipbox/tipbox"
+    "tipbox":"../../component/tipbox/tipbox",
+        "infobox": "../../component/infobox/infobox"
   },
   "enablePullDownRefresh": true,
   "backgroundColorTop": "#8DDAD5",

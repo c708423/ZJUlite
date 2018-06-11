@@ -15,10 +15,7 @@ Page({
     regstatus:'',
     allinfoget:0,
     talkcard:[
-      { id: 'msgbox1', title: 'Qc0', content: 'sili23i收到收到机收到收到机收到收到机收到收到机收到收到机卡士力架老师看大家阿斯顿快乐机啊3李丹空间l'},
-      { id: 'msgbox2', title: 'Qc1', content: 'si32il'},
-      { id: 'msgbox3', title: 'Qc2', content: 'sil43sil'},
-      { id: 'msgbox5', title: 'Qc3', content: 'si4234fdssdsil'}
+      { id: 'msgbox1', title: '木易安回复了你', content: '腾讯互动娱乐了解一下呢！朋友！'}
     ],
     tip_msg : "最近消息",
     hasUserInfo: false,
@@ -56,6 +53,9 @@ Page({
       util.showModel('Fail', '请您在登录后使用');
     }
   },
+  onShow:function(){
+    this.reloadinfo()
+  },
   gotomarks:function(){
     var logged=this.data.logged
     if(logged){
@@ -68,7 +68,6 @@ Page({
     
   },
   classifychange: function (e) {
-    console.log(e.detail.id)
     var that = this
     var curclassy = e.detail.id
     this.setData({
@@ -89,7 +88,6 @@ Page({
         } else {
           that.setData({ allinfoget: 1 })
         }
-        console.log(that.data.lastid)
       }
     })
   },
@@ -104,13 +102,11 @@ Page({
     var startPointY = this.data.startPointY
     var anmiationstatus = this.data.anmiationstatus
     if (startPointY - curPointY >= 15 && anmiationstatus===0) {
-      console.log("move down")
       this.setData({
         anmiationstatus:1
       })
       this.hidetab()
     } else if (curPointY - startPointY >= 15 && anmiationstatus === 0) {
-      console.log("move up")
       this.setData({
         anmiationstatus: 1
       })
@@ -173,7 +169,6 @@ Page({
       this.setData({
         showView: stateHome
       });
-      console.log(this.data.showView);
   },
   fresh_homepage: function(e){
     var stateHome = {
@@ -186,13 +181,10 @@ Page({
     this.setData({
       showView : stateHome
     });
-    console.log(this.data.showView);
   },
   del_talkbox:function (e){
-    console.log(e);
     var newtalkcard = this.data.talkcard,i;
     for (i=0;i<=newtalkcard.length;i++){
-      console.log(this.data.talkcard[i].id);
       if (newtalkcard[i].id == e.detail.id) {
         newtalkcard.splice(i,1);
         break;
@@ -214,7 +206,6 @@ Page({
     }
   },
   onReachBottom : function(){
-      console.log('onReachBottom');
       if (this.data.allinfoget == 1) return;
       var that = this;
       setTimeout(function(){
@@ -233,7 +224,6 @@ Page({
             var tmpcontent = that.data.contentcard;
             tmpcontent = tmpcontent.concat(res.data.data);
             that.setData({contentcard: tmpcontent})
-            console.log(tmpcontent)
           }
         })
         that.setData({ contentcard: that.data.contentcard });
@@ -241,7 +231,6 @@ Page({
   },
   onPullDownRefresh: function () {
       var that=this
-      console.log("onReachTop");
       this.setData({
         pullstatus:0
       })
@@ -254,13 +243,11 @@ Page({
   },
   allgoback: function(){
     var that = this;
-    console.log('all go back happen');
     this.data.talkcard.forEach(function(value,index,arr){
       that.selectComponent('#' + value.id).goback();
     });
   },
   pushnewinfo:function(){
-    console.log(this.data.userInfo.ZJUpass)
     if (this.data.userInfo.ZJUpass == 0 || typeof this.data.userInfo.ZJUpass === 'undefined') return; 
     wx.navigateTo({
       url: '../postinfo/postinfo'
@@ -320,21 +307,24 @@ Page({
       }
     });
   },
+  reloadinfo: function(){
+    var that = this
+    wx.request({
+      url: config.service.hosturl + 'getinfo',
+      data: {
+        lastid: 0
+      },
+      method: 'GET',
+      success: function (res) {
+        that.setData({ contentcard: res.data.data })
+        console.log(res.data.data.length)
+        that.setData({ lastid: res.data.data[res.data.data.length - 1].id })
+        console.log(that.data.lastid)
+      }
+    })
+  },
   onLoad: function(){
-      var that = this
-      wx.request({
-        url: config.service.hosturl + 'getinfo',
-        data:{
-          lastid:0
-        },
-        method:'GET',
-        success: function(res) {
-          that.setData({ contentcard:res.data.data})
-          console.log(res.data.data.length)
-          that.setData({ lastid: res.data.data[res.data.data.length - 1].id})
-          console.log(that.data.lastid)
-        }
-      })
+    this.reloadinfo()
   },
   doLogin: function (options) {
     var that = this;

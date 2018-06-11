@@ -103,6 +103,11 @@ Component({
     subcommentpost_statechange: function(){
       this.setData({subcommentstate:true});
     },
+    openchat:function(){
+        wx.navigateTo({
+          url: '../chat/chat'
+        })
+    },
     subcommentpost: function(e){
 
       if (this.data.subcommentstate == false) return

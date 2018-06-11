@@ -28,7 +28,7 @@
     </view>
   </view>
   <view id='talk' class="{{showView['talk'] ? '':'viewhidden'}}" catch:touchstart='allgoback'>
-    <msgbox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox" ></msgbox>
+    <infobox wx:for="{{talkcard}}" wx:key="{{id}}" id="{{item.id}}" title="{{item.title}}" content="{{item.content}}" msgboxid="{{item.id}}" bind:del_talkbox="del_talkbox" ></infobox>
 
 
     <view class="{{pullstatus ? '':'viewhidden'}}">
@@ -36,6 +36,7 @@
     </view>
   </view>
   <view id='msg' class="{{showView['new-msg'] ? '':'viewhidden'}}">
+    <msgbox content="腾讯互动娱乐了解一下呢！朋友！" title="学业疑难" bind:del_talkbox="del_talkbox"></msgbox>
   </view>
   <view id='user' class="{{showView['user'] ? '':'viewhidden'}}">
     <userprofile name='{{userInfo.nickName}}' avaurl='{{userInfo.avatarUrl}}' logged='{{logged}}' regstatus='{{regstatus}}'><button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" zjupass='{{userInfo.ZJUpass}}' >点击测试登录接口</button></userprofile>

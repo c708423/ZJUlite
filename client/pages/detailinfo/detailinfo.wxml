@@ -3,7 +3,7 @@
   <view class='backgroundcolor'></view>
   <view class='ownerprofile'>
     <view class='ownerprofile-left'>
-      <view class='headimg-wrap'>
+      <view class='headimg-wrap' bindtap='openchat'>
         <image src="{{pageinfo.avatarurl}}">
         </image>
       </view>

@@ -40,7 +40,7 @@ Component({
    */
   data: {
     ishide:0,
-    
+    talknew_msgnum:1,
     title : {
       'home':'新鲜事',
       'talk':'我的消息',

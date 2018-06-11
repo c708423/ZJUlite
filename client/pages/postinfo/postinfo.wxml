@@ -9,7 +9,7 @@
           <label>{{classify_map[nowclass]}}</label>
         </view>
         <view class='inputbox'>
-          <textarea placeholder='输入文字...' bindconfirm='content_complete' bindblur='content_complete'></textarea>
+          <textarea placeholder='输入文字...' bindconfirm='content_complete' bindinput='content_complete'></textarea>
         </view>
       </view>
       <view class='uploader-container'>

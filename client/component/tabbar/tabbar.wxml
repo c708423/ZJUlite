@@ -1,22 +1,25 @@
 <!--component/tabbar/tabbar.wxml-->
 <view>
-<!-- <view class="arrow" bindtap="{{ishide == 1 ? 'showtab' : 'hidetab' }}">
+  <!-- <view class="arrow" bindtap="{{ishide == 1 ? 'showtab' : 'hidetab' }}">
   <view>
     <image src = "{{ishide == 0 ? '/asset/icon/arrow-down.png':'/asset/icon/arrow-up.png'}}"></image>
   </view>
 </view> -->
-<view class='wrap_bar' animation="{{animationData}}">
-  <view id='home' class = 'bar-button' bindtap = "select_bar">
-    <image src = "{{blue_one['home'] == 1 ? '/asset/icon/blue-home.svg':'/asset/icon/home.svg'}}"></image>
+  <view class='wrap_bar' animation="{{animationData}}">
+    <view id='home' class='bar-button' bindtap="select_bar">
+      <image src="{{blue_one['home'] == 1 ? '/asset/icon/blue-home.svg':'/asset/icon/home.svg'}}"></image>
+    </view>
+    <view id='new-msg' class='bar-button' bindtap="select_bar">
+      <image src="{{blue_one['new-msg'] == 1 ? '/asset/icon/blue-msg.svg':'/asset/icon/msg.svg'}}"></image>
+    </view>
+    <view id='talk' style="position:relative" class='bar-button' bindtap="select_bar">
+      <image src="{{blue_one['talk'] == 1 ? '/asset/icon/blue-talk.svg':'/asset/icon/talk.svg'}}"></image>
+      <view class='red-point {{talknew_msgnum == 0?"hidden":""}}'>
+        <view style="display:inline-block;margin:0 auto;">{{talknew_msgnum}}</view>
+      </view>
+    </view>
+    <view id='user' class='bar-button' bindtap="select_bar">
+      <image src="{{blue_one['user'] == 1 ? '/asset/icon/blue-user-center.svg':'/asset/icon/user-center.svg'}}"></image>
+    </view>
   </view>
-  <view id='new-msg' class = 'bar-button' bindtap = "select_bar">
-    <image src = "{{blue_one['new-msg'] == 1 ? '/asset/icon/blue-msg.svg':'/asset/icon/msg.svg'}}"></image>
-  </view>
-  <view id='talk' class = 'bar-button' bindtap = "select_bar">
-    <image src = "{{blue_one['talk'] == 1 ? '/asset/icon/blue-talk.svg':'/asset/icon/talk.svg'}}"></image>
-  </view>
-  <view id='user' class = 'bar-button' bindtap = "select_bar">
-    <image src = "{{blue_one['user'] == 1 ? '/asset/icon/blue-user-center.svg':'/asset/icon/user-center.svg'}}"></image>
-  </view>
-</view>
 </view>

@@ -160,18 +160,19 @@ Page({
       },
       success (res){
         console.log(res);
+        wx.showToast({
+          title: '已完成',
+          icon: 'success',
+          duration: 500,
+          success: function () {
+            setTimeout(function () {
+              wx.navigateBack({ delta: 1 })
+            }, 500)
+          }
+        });
       }
     })
-    wx.showToast({
-      title: '已完成',
-      icon: 'success',
-      duration: 1500,
-      success:function(){
-        setTimeout(function () {
-        wx.navigateBack({delta:1})
-        },1500)
-      }
-    });
+
   },
   content_complete: function(e){
     this.setData({content:e.detail.value});

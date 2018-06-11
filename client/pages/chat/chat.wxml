@@ -3,26 +3,21 @@
   <view class='backgroundcolor'>
     <view class='user-head'>
       <view class='headimg-wrap'>
-        <image src="{{avaurl}}">
+        <image src="/asset/qc.jpg">
         </image>
       </view>
       <view class='nickname'>
-        nickname
+        qc
       </view>
     </view>
   </view>
   <view class='chatcontent'>
     <view class='graytime'>
-    01 Aug 2018
+    0:15, 09 Aug 2018
     </view>
     <view class='rightmsg'>
     <view>
-    环境健康健康不健康
-    </view>
-    </view>
-    <view class='leftmsg'>
-    <view>
-    ojbk
+    想请问我的个人简历通过什么途径提交给您呢？
     </view>
     </view>
   </view>

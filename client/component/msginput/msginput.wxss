@@ -11,12 +11,18 @@
     display:flex;
     align-items: center;
 }
+.msg-submit-img {
+  width:80%;
+height:80%;
+margin-left:5rpx;
+}
 .msg-submit{
     background-color:#00C8A8;
 
     border-radius: 50%;
     right:3rpx;
-    display:inline-block;
+  display:flex;
+  align-items: center;
     position:absolute;
     
 }
